@@ -1,8 +1,10 @@
-const multer = require('multer')
+const multer = require('multer');
 
 function upploadImage(){
     const storage = multer.diskStorage({
-        destination: './public/files',
+        destination:  function (req, file, cb) {
+            cb(null, '/public/file')
+          },
       
         filename: function (_req, file, cb) {
         const extension = file.originalname.slice(file.originalname.lastIndexOf('.'));
@@ -17,7 +19,7 @@ function upploadImage(){
 
 }
 
-module.exports = upploadImage;
+module.exports = upploadFile;
 
 
 
