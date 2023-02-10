@@ -80,8 +80,7 @@ export default defineComponent({
       json.append('likes', this.likes.toString())
       
       try {
-        //CAMBIAR: if (this.text === "" || this.image === "") {
-        if (this.text === "" ) {
+        if (this.text === "" && this.image === "") {
               alert("Para hacer una nueva publicación has de introducir, al menos, un texto o una foto.")
               this.error = true;
           } else {

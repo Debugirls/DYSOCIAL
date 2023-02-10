@@ -36,7 +36,7 @@ export default defineComponent({
   },
   data(){
     return {
-      isAuthenticated: false
+      isAuthenticated: true
     }
   },
   watch: {

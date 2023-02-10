@@ -18,11 +18,7 @@
                     </div>
                     <div v-else class="card register">
                     <h1>CREAR USUARIO</h1>
-                    <div v-if="showSignupSuccesfullMessage" >
-                      <div class="userCreated">¡Usuario creado correctamente!<br>
-                      ya puedes <router-link class="link" to="#" @click="registerActive = !registerActive">INICIAR SESIÓN</router-link>
-                      </div>
-                    </div>
+                    
                     <form class="form-group" @submit.prevent="signNewUser">
                         <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="usernameReg" type="text" class="form-control" placeholder="Nombre usuario" required>
@@ -31,6 +27,11 @@
                         <p>¿Ya tienes cuenta? <router-link class="link" to="#" @click="registerActive = !registerActive">LOGIN</router-link>
                         </p>
                     </form>
+                    <div v-if="showSignupSuccesfullMessage" >
+                      <div class="userCreated">¡Usuario creado correctamente!<br>
+                      ya puedes <router-link class="link" to="#" @click="registerActive = !registerActive">INICIAR SESIÓN</router-link>
+                      </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -49,6 +50,17 @@ export default defineComponent({
   name: "NavBar",
   components: {
   },
+  data() {
+    return { 
+      registerActive: false,
+      usernameReg: "",
+      emailLogin: "",
+      passwordLogin: "",
+      emailReg: "",
+      passwordReg: "",
+      showError: false,
+      showSignupSuccesfullMessage: false
+    }},
   setup() {
     //Haremos la llamada a la Api con el fetchToken traido del composable al que le pasaremos los valores de email y contraseña con el evento submit del formulario
     const { fetchToken, fetchUserLogin } = useUserLogin();
@@ -69,10 +81,11 @@ export default defineComponent({
   },
   methods: {
     async signNewUser() {
-      const json = new FormData ();
+      const json = new FormData ()
       json.append('email', this.emailReg); 
       json.append('password', this.passwordReg);  
       json.append('username', this.usernameReg);
+      console.log('Mensaje', {json});
       try {
           await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);  
           this.showSignupSuccesfullMessage = true
@@ -83,17 +96,6 @@ export default defineComponent({
         alert('404 not found')
     } }
    },
-  data() {
-        return { 
-      registerActive: false,
-      usernameReg: "",
-      emailLogin: "",
-      passwordLogin: "",
-      emailReg: "",
-      passwordReg: "",
-      showError: false,
-      showSignupSuccesfullMessage: false
-    }},
 })
 
 </script>
