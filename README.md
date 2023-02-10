@@ -55,12 +55,13 @@ http://localhost:8080/
 
 <i>(cosas por hacer)</i>
 <p>
-<ul>Registro usuario (frontend)</ul>
-<ul>Comprobar tema views usuario (no muestra las publicaciones)</ul>
-<ul>Fusionar con backend de Nicole</ul>
-<ul>Añadir imagenes</ul>
-<ul>Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
-<ul>Ir añadiendo cosas en base a veamos que falta</ul>
+<ul>- Registro usuario (frontend)</ul>
+<ul>- Comprobar tema views usuario (no muestra las publicaciones)</ul>
+<ul>- Fusionar con backend de Nicole</ul>
+<ul>- Tema filtros y busquedas</ul>
+<ul>- Añadir imagenes</ul>
+<ul>- Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+<ul>- Ir añadiendo cosas en base a veamos que falta</ul>
 </p>
 
 ## IMPORTANTE:
