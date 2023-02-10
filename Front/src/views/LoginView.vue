@@ -18,6 +18,11 @@
                     </div>
                     <div v-else class="card register">
                     <h1>CREAR USUARIO</h1>
+                    <div v-if="showSignupSuccesfullMessage" >
+                      <div class="userCreated">¡Usuario creado correctamente!<br>
+                      ya puedes <router-link class="link" to="#" @click="registerActive = !registerActive">INICIAR SESIÓN</router-link>
+                      </div>
+                    </div>
                     <form class="form-group" @submit.prevent="signNewUser">
                         <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="usernameReg" type="text" class="form-control" placeholder="Nombre usuario" required>
@@ -69,9 +74,9 @@ export default defineComponent({
       json.append('password', this.passwordReg);  
       json.append('username', this.usernameReg);
       try {
-          await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);        
-          console.log("Creado usuario");
-          await this.getToken()     
+          await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);  
+          this.showSignupSuccesfullMessage = true
+          console.log("Creado usuario"); 
       }
       catch (err) {
         console.log(err);
@@ -87,11 +92,17 @@ export default defineComponent({
       emailReg: "",
       passwordReg: "",
       showError: false,
+      showSignupSuccesfullMessage: false
     }},
 })
 
 </script>
 <style scoped>
+.userCreated{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
 
 p {
    line-height: 1rem;
