@@ -55,6 +55,8 @@ app.get("/", (req, res) => {
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 require("./app/routes/comment.routes")(app);
+require('./app/routes/image.routes')(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;

@@ -1,9 +1,11 @@
-import multer, { diskStorage } from 'multer';
+const multer = require('multer')
+const path = require('path')
+
 
 function upploadFile(){
-    const storage = diskStorage({
+    const storage = multer.diskStorage({
         destination:  function (req, file, cb) {
-            cb(null, '/public/file')
+            cb(null, path.join(__dirname, '../public' ))
           },
       
         filename: function (_req, file, cb) {
@@ -12,15 +14,11 @@ function upploadFile(){
         }
       })
 
-      const upload = multer({ storage: storage }).single('file')
+      const upload = multer({ storage: storage }).single('image')
       
       return upload;
       
 
 }
 
-export default upploadFile;
-
-
-
-
+module.exports = upploadFile;
