@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+
+
+:root {
+    --color-violet700:#19153a;
+    --color-violet600:#332a74;
+    --color-violet500:#4d3fb0;
+    --color-violet400:#6554ea;
+    --color-violet300: #8c7eee;
+    --color-violet200: #b2a9f4;
+    --color-violet100: #d9d5f9;
+    --color-violet10: rgba(244, 234, 245, 0.911);
+    --color-black100: #222222;
+    --color-grey100: rgba(121, 119, 119, 0.301);
+    --color-green100: #6af0c6;
+    --color-alert300: #ba3831;
+    --color-alert200: #ec625b;
+    --color-alert100: #ffdbde;
+    --color-success300:#377e3f;
+    --color-success200:#53b65a;
+    --color-succes100:#ddf8e4;
+      
+}
+
+
+body{
+    font-family: 'Source Code Pro', monospace; 
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    margin-bottom: 25%;
+}
