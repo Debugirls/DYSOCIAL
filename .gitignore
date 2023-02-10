@@ -1,0 +1,24 @@
+# Main
+.vscode
+
+# Backend
+Back/node_modules
+Back/.vscode
+
+#Frontend
+Front/.DS_Store
+Front/node_modules
+Front/dist
+Front/.env.local
+Front/.env.*.local
+Front/npm-debug.log*
+Front/yarn-debug.log*
+Front/yarn-error.log*
+Front/pnpm-debug.log*
+Front/.idea
+Front/.vscode
+Front/*.suo
+Front/*.ntvs*
+Front/*.njsproj
+Front/*.sln
+Front/*.sw?
