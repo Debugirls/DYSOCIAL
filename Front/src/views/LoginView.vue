@@ -64,15 +64,15 @@ export default defineComponent({
   },
   methods: {
     async signNewUser() {
-      const json = new FormData ()
-      json.append('email', this.emailReg) 
-      json.append('password', this.passwordReg)  
-      json.append('username', this.usernameReg)
-      
+      const json = new FormData ();
+      json.append('email', this.emailReg); 
+      json.append('password', this.passwordReg);  
+      json.append('username', this.usernameReg);
       try {
           await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);        
-          console.log("Creado usuario");   
-        }
+          console.log("Creado usuario");
+          await this.getToken()     
+      }
       catch (err) {
         console.log(err);
         alert('404 not found')
