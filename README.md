@@ -55,12 +55,14 @@ http://localhost:8080/
 
 <i>(cosas por hacer)</i>
 <p>
-<ul>- Comrpobar las vistas y funcionalidades del front hasta ahora van, hacer unregistro de fallos</ul>
-<ul>- Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
 <ul>- Fusionar con backend de Nicole</ul>
 <ul>- Tema filtros y busquedas</ul>
 <ul>- Añadir imagenes</ul>
-<ul>- Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+<ul>- Cosas a revisar en el front;
+<ul>-> Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
+<ul>-> Añadir algún tipo de notificación/aviso simpatico al hacer una publicación con exito</ul>
+<ul>-> Pulir la maquetación(ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+</ul>
 <ul>- Ir añadiendo cosas en base a veamos que falta</ul>
 </p>
 
