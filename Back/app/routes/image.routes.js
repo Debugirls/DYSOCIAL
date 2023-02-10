@@ -1,6 +1,6 @@
 var express = require ('express');
 var router = express.Router();
-var uploadFile = require('../middlewares/multer')
+var uploadFile = require('../middlewares/multer').default
 
 
 //localhost:8081/uploadImage

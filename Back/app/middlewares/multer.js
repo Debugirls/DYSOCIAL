@@ -1,7 +1,7 @@
-const multer = require('multer');
+import multer, { diskStorage } from 'multer';
 
 function upploadImage(){
-    const storage = multer.diskStorage({
+    const storage = diskStorage({
         destination:  function (req, file, cb) {
             cb(null, '/public/file')
           },
@@ -12,14 +12,14 @@ function upploadImage(){
         }
       })
 
-      const upload = multer({ storage: storage }).single('image')
+      const upload = multer({ storage: storage }).single('file')
       
       return upload;
       
 
 }
 
-module.exports = upploadFile;
+export default upploadFile;
 
 
 
