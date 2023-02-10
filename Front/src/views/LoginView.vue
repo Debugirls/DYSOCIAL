@@ -9,23 +9,21 @@
                     <div v-if="!registerActive" class="card login">
                     <h1>INICIAR SESIÓN</h1>
                     <form class="form-group form" @submit.prevent="getToken">
-                        <input v-model="email" type="text" class="form-control" placeholder="Email" required>
+                        <input v-model="email" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="password" type="password" class="form-control" placeholder="Contraseña" required>
                         <input type="submit" class="btn btn-outline-primary">
-                        <p>¿No tienes cuenta? <router-link class="link" to="#" @click="registerActive = !registerActive, showError = false">ÚNETE</router-link>
+                        <p>¿No tienes cuenta? <router-link class="link" to="#" @click="registerActive = !registerActive">ÚNETE</router-link>
                         </p>
                     </form>
                     </div>
-
                     <div v-else class="card register">
                     <h1>CREAR USUARIO</h1>
-                    <form class="form-group">
+                    <form class="form-group" @submit.prevent="getToken">
+                        <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="usernameReg" type="text" class="form-control" placeholder="Nombre usuario" required>
                         <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
-                        <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
-                        <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
-                        <input type="submit" class="btn btn-outline-primary" @click="doRegister">
-                        <p>¿Ya tienes cuenta? <router-link class="link" to="#" @click="registerActive = !registerActive, showError = false">LOGIN</router-link>
+                        <input type="submit" class="btn btn-outline-primary">
+                        <p>¿Ya tienes cuenta? <router-link class="link" to="#" @click="registerActive = !registerActive">LOGIN</router-link>
                         </p>
                     </form>
                     </div>
@@ -65,7 +63,7 @@ export default defineComponent({
   },
   methods: {
       doRegister() {
-         if (this.emailReg === "" || this.passwordReg === "" || this.confirmReg === "" || this.usernameReg === "") {
+         if (this.emailReg === "" || this.passwordReg === "" || this.usernameReg === "") {
             this.showError = true;
          } else {
             console.log("registration done yei");
@@ -80,7 +78,6 @@ export default defineComponent({
       passwordLogin: "",
       emailReg: "",
       passwordReg: "",
-      confirmReg: "",
       showError: false,
     }},
 })
