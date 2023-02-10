@@ -69,3 +69,8 @@ http://localhost:8080/
 <p>
 Cuando trabajemos comprobar que todo lo que funcionaba cuando hemos hecho pull sigue funcionando tal cual.
 </p>
+
+<b>Comuniquemonos y actualicemos el readme</b>
+<p>
+Si algo nuevo falla pero habéis avanzado dejadlo comentado en el código y añadidlo en el TODO aquí presente. Si hay algo importante que decirnos a todas, añadamoslo aquí también. Y cada vez que nos vayamos o vayamos a trabajar de nuevo revisemos el readme. Esta justo aquí, es más fácil que mirar discord o whatsapp. Pero por eso mismo seamos también limpias, quitemos lo ya hecho y no añadamos cosas duplicadas ni innecesarias.
+</p>
