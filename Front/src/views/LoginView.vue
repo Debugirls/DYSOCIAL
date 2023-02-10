@@ -18,7 +18,7 @@
                     </div>
                     <div v-else class="card register">
                     <h1>CREAR USUARIO</h1>
-                    <form class="form-group" @submit.prevent="getToken">
+                    <form class="form-group" @submit.prevent="signNewUser">
                         <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="usernameReg" type="text" class="form-control" placeholder="Nombre usuario" required>
                         <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
@@ -36,7 +36,9 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-
+import { User } from '../models/user';
+import dysocialApi from '../api/dysocialApi';
+import { AxiosResponse } from 'axios';
 import useUserLogin from "../composables/useUserLogin";
 export default defineComponent({
   name: "NavBar",
@@ -51,7 +53,7 @@ export default defineComponent({
     const getToken = async () => {
       await fetchToken({email: email.value, password: password.value});
       if (localStorage.getItem('token')){
-      fetchUserLogin()
+        fetchUserLogin()
     }
     }
     return{
@@ -61,13 +63,20 @@ export default defineComponent({
     }
   },
   methods: {
-      doRegister() {
-         if (this.emailReg === "" || this.passwordReg === "" || this.usernameReg === "") {
-            this.showError = true;
-         } else {
-            console.log("registration done yei");
-         }
-      }
+    async signNewUser() {
+      const json = new FormData ()
+      json.append('email', this.emailReg) 
+      json.append('password', this.passwordReg)  
+      json.append('username', this.usernameReg)
+      
+      try {
+          await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);        
+          console.log("Creado usuario");   
+        }
+      catch (err) {
+        console.log(err);
+        alert('404 not found')
+    } }
    },
   data() {
         return { 
