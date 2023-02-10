@@ -56,7 +56,7 @@ http://localhost:8080/
 <i>(cosas por hacer)</i>
 <p>
 <ul>- Registro usuario (frontend)</ul>
-<ul>- Comprobar tema views usuario (no muestra las publicaciones)</ul>
+<ul>- Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
 <ul>- Fusionar con backend de Nicole</ul>
 <ul>- Tema filtros y busquedas</ul>
 <ul>- Añadir imagenes</ul>
