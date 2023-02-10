@@ -55,10 +55,23 @@ http://localhost:8080/
 
 <i>(cosas por hacer)</i>
 <p>
-<ul>Registro usuario (frontend)</ul>
-<ul>Comprobar tema views usuario (no muestra las publicaciones)</ul>
-<ul>Fusionar con backend de Nicole</ul>
-<ul>Añadir imagenes</ul>
-<ul>Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
-<ul>Ir añadiendo cosas en base a veamos que falta</ul>
+<ul>- Registro usuario (frontend)</ul>
+<ul>- Comprobar tema views usuario (no muestra las publicaciones)</ul>
+<ul>- Fusionar con backend de Nicole</ul>
+<ul>- Tema filtros y busquedas</ul>
+<ul>- Añadir imagenes</ul>
+<ul>- Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+<ul>- Ir añadiendo cosas en base a veamos que falta</ul>
+</p>
+
+## IMPORTANTE:
+
+<b>Intentemos no pushear cosas rotas a main</b>
+<p>
+Cuando trabajemos comprobar que todo lo que funcionaba cuando hemos hecho pull sigue funcionando tal cual.
+</p>
+
+<b>Comuniquemonos y actualicemos el readme</b>
+<p>
+Si algo nuevo falla pero habéis avanzado dejadlo comentado en el código y añadidlo en el TODO aquí presente. Si hay algo importante que decirnos a todas, añadamoslo aquí también. Y cada vez que nos vayamos o vayamos a trabajar de nuevo revisemos el readme. Esta justo aquí, es más fácil que mirar discord o whatsapp. Pero por eso mismo seamos también limpias, quitemos lo ya hecho y no añadamos cosas duplicadas ni innecesarias.
 </p>
