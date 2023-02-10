@@ -17,11 +17,11 @@
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
                     <h6>Email</h6>
-                    <p class="text-muted">mail@example.com</p>
+                    <p class="text-muted">{{ userEmail }}</p>
                 </div>
                 <div class="row pt-1">
                     <h6>Nombre</h6>
-                    <p class="text-muted">Name</p>
+                    <p class="text-muted">{{ userName }}</p>
                 </div>
               </div>
             </div>
@@ -33,7 +33,32 @@
 </section>
 </template>
 
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+import { User } from '../models/user';
+import useUserLogin from '../composables/useUserLogin';
 
+export default defineComponent({
+  name: 'ProfileView',
+  components: {
+  },
+  
+  setup() {
+    const { userLogin, fetchUserLogin } = useUserLogin();
+    fetchUserLogin();
+    let userEmail =  userLogin.value.email;
+    let userName =  userLogin.value.username
+    console.log(userEmail, userName)
+    return { 
+      userEmail,
+      userName
+    }
+  }
+})
+
+
+
+</script>
 
 <style scoped>
 

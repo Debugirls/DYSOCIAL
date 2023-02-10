@@ -55,7 +55,7 @@ http://localhost:8080/
 
 <i>(cosas por hacer)</i>
 <p>
-<ul>- Vista UserProfile</ul>
+<ul>- Comrpobar las vistas y funcionalidades del front hasta ahora van, hacer unregistro de fallos</ul>
 <ul>- Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
 <ul>- Fusionar con backend de Nicole</ul>
 <ul>- Tema filtros y busquedas</ul>
