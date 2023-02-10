@@ -90,33 +90,6 @@ export default defineComponent({
     }},
 })
 
-//TODO: Añadir lógica
-//const postsStore = usePosts()
-    /*
-    methods: {
-      async submitUser() {
-          this.showError = false
-          //postsStore.updateEmail(this.email);
-          try {
-            const response = await axios.post('https://api.escuelajs.co/api/v1/auth/login', {
-                email: this.email,
-                password: this.password
-            });
-            if (response.status === 201) {
-                console.log("yeei, login succesful");
-                postsStore.updateAccessToken(response.data.access_token);
-                postsStore.updateRefreshToken(response.data.refresh_token);
-                this.$router.push({ name: 'products' });
-            } else {
-                console.log("oooh, login fail");
-                this.showError = true;
-            }
-          } catch (error) {
-            console.log("Error:", error);
-            this.showError = true;
-          }
-        }
-    },*/
 </script>
 <style scoped>
 
