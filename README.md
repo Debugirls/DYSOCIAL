@@ -62,3 +62,10 @@ http://localhost:8080/
 <ul>Pulir el front (ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
 <ul>Ir añadiendo cosas en base a veamos que falta</ul>
 </p>
+
+## IMPORTANTE:
+
+<b>Intentemos no pushear cosas rotas a main</b>
+<p>
+Cuando trabajemos comprobar que todo lo que funcionaba cuando hemos hecho pull sigue funcionando tal cual.
+</p>
