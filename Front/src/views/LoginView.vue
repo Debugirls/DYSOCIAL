@@ -36,9 +36,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-//import ErrorAlert  from "@/ErrorAlert.vue"
+
 import useUserLogin from "../composables/useUserLogin";
-//components: { ErrorAlert },
 export default defineComponent({
   name: "NavBar",
   components: {
