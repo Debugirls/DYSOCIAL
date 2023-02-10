@@ -61,7 +61,7 @@ http://localhost:8080/
 <ul>- Cosas a revisar en el front;
 <ul>-> Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
 <ul>-> Añadir algún tipo de notificación/aviso simpatico al hacer una publicación con exito</ul>
-<ul>-> Pulir la maquetación(ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+<ul>-> Pulir la maquetación(ponerlo más bonito, estanadrizar y unificar estilos, revisar que falta)</ul>-> Arreglar error de la imagen subida de las publicaciones. 
 </ul>
 <ul>- Ir añadiendo cosas en base a veamos que falta</ul>
 </p>
