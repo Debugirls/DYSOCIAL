@@ -53,17 +53,28 @@ http://localhost:8080/
 
 ## TODO:
 
-<i>(cosas por hacer)</i>
+<i>Cosas a revisar en el back </i>
 <p>
-<ul>- Fusionar con backend de Nicole</ul>
-<ul>- Tema filtros y busquedas</ul>
-<ul>- AÃ±adir imagenes</ul>
-<ul>- Cosas a revisar en el front;
-<ul>-> Diferenciar HomeView de HomeUserView en algo o unificarlas</ul>
+<ul>- Búsqueda por autor</ul>
+<ul>- Búsqueda por título</ul>
+<ul>- Búsqueda por fecha</ul>
+<ul>- Búsqueda por id</ul>
+<ul>- Ordenar por fecha</ul>
+<ul>-- Quitar hora de la fecha que se devuelve a las publicaciones </ul>
+
+<ul>- Cosas a revisar en el front:
+<ul>-> Arreglar error de la imagen subida de las publicaciones. </ul>
+<ul>- Ocultar barra botones en la publicación si el user no está logado</ul>
+<ul> Verificar corracto funcionamiento de las búsquedas (por autor, título, fecha e id)</ul>
+<ul> crear store para guardar +- karma</ul>
+<ul>Revisar diseño botones karma</ul>
 <ul>-> AÃ±adir algÃºn tipo de notificaciÃ³n/aviso simpatico al hacer una publicaciÃ³n con exito</ul>
-<ul>-> Pulir la maquetaciÃ³n(ponerlo mÃ¡s bonito, estanadrizar y unificar estilos, revisar que falta)</ul>-> Arreglar error de la imagen subida de las publicaciones. 
+<ul>-> Pulir la maquetaciÃ³n(ponerlo mÃ¡s bonito, estanadrizar y unificar estilos, revisar que falta)</ul>
+<ul> Añadir fotos Keepcoding a los perfiles de usuario</ul>
+<ul> Implantar follow someone</ul>
+<ul>-> Diferenciar HomeView de HomeUserView en seguidores</ul>
 </ul>
-<ul>- Ir aÃ±adiendo cosas en base a veamos que falta</ul>
+<ul> Hacer presentación</ul>
 </p>
 
 ## IMPORTANTE:
