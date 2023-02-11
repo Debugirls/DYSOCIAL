@@ -78,13 +78,14 @@ export default defineComponent({
           alert("Para hacer una nueva publicación has de introducir, al menos, un texto o una foto.")
           this.error = true;
         } else {
-          await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
+          const newComment = await dysocialApi.post<unknown, AxiosResponse<Publication>>(
             '/publications', json);
+          console.log(newComment);
 
           const fileData = new FormData()
           fileData.append('image', this.image, 'testimagen.jpg')
           await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
-            '/uploadFile', fileData, 
+            `/uploadFile?publicationId=${newComment.data.id}`, fileData, 
             {
               headers: { 'Content-Type': 'multipart/form-data' }
             }

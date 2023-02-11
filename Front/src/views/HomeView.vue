@@ -28,11 +28,10 @@ export default defineComponent({
   },
   
   setup() {
-    const { publications, publicationsFiltered, fetchPublications, totalPages, fetchPublicationByTitle, fetchPublicationByPagination, setCurrentPage } = usePublications();
-    setCurrentPage(0);
+    const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination } = usePublications();
     fetchPublications();
     let inputFilter = ref("");
-    const limitShow = 10;
+    const limitShow = 2;
     const showAllPublications = () => {
       fetchPublicationByPagination({offset: 0, limit: limitShow});
       }
@@ -51,7 +50,7 @@ export default defineComponent({
   
     //Evento que se lanza al hacer click en 'See next 2' para mostrar los siguientes 2 productos. 
     const showNext = () =>{
-      if (offset >= totalPages.value){
+      if (offset >= publicationsLength.value){
         alert('There are no more products')
       }else{
         offset = offset + 1;
