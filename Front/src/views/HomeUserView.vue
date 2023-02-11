@@ -20,6 +20,8 @@ import { Publication } from '../models/publications';
 import usePublications from '../composables/usePublications';
 import NavigationButtons from '../components/NavigationButtons.vue'
 import { useRoute } from "vue-router";
+import dysocialApi from '../api/dysocialApi';
+import { AxiosResponse } from 'axios';
 
 export default defineComponent({
   name: 'HomeUserView',
@@ -61,7 +63,7 @@ export default defineComponent({
         fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     }
-    
+  
     return { 
       publications, 
       publicationsFiltered, 
@@ -69,11 +71,35 @@ export default defineComponent({
       showAllPublications,
       showPrevious,
       showNext,
-      like: (publication: Publication) => publication.likes += 1,
-      dislike: (publication: Publication) => publication.likes -=1,
       follow: (publication: Publication) => publication ,//TODO:botón de seguir
     }
-  }
+  },
+  methods: {
+    //Evento que se lanza al hacer click en 'Like' para añadir karma
+    async like() {
+      const likeIt = (publication: Publication) => {
+      publication.likes += 1};
+      try{
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications', likeIt) 
+        console.log("Update SUCCESS!")
+      } catch(error) {
+        console.log(error)
+        alert('404 not found')
+      }
+    },
+    //Evento que se lanza al hacer click en 'Dislike' para quitar karma
+    async dislike() {
+      const dislikeIt = (publication: Publication) => {
+      publication.likes -= 1};
+      try{
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications', dislikeIt) 
+        console.log("Update SUCCESS!")
+      } catch(error) {
+        console.log(error)
+        alert('404 not found')
+      }
+    }
+   },
 });
 </script>
 <style scoped>

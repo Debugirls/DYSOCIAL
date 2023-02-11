@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import PublicationsCard from '../components/PublicationsCard.vue';
-import { Publication } from '../models/publications';
+//import { Publication } from '../models/publications';
 import usePublications from '../composables/usePublications';
 import NavigationButtons from '../components/NavigationButtons.vue'
 
