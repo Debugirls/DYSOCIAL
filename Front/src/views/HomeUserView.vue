@@ -31,17 +31,15 @@ export default defineComponent({
   setup() {
     const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
     const route = useRoute()
-    if(route.query.titleQuery) {
-      console.log("---We got a query! title=", String(route.query.titleQuery))
-      fetchPublicationByTitle(String(route.query.titleQuery))
-    }
+    const titleQuery = route.query.titleQuery ? String(route.query.titleQuery) : "";
+    const authorQuery = route.query.authorQuery ? String(route.query.authorQuery) : "";
     fetchPublications();
     let inputFilter = ref("");
     const limitShow = 10;
     const showAllPublications = () => {
-      fetchPublicationByPagination({offset: 0, limit: limitShow});
+      fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
       }
-    fetchPublicationByPagination({offset: 0, limit: limitShow});
+    fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
 
     //Evento que se lanza al hacer click en 'See previous' para mostrar los anteriores productos. 
   let offset = 0;
@@ -50,7 +48,7 @@ export default defineComponent({
         alert('There are no more previous products')
       }else{
         offset = offset - 1;
-        fetchPublicationByPagination({offset: offset, limit: limitShow});
+        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     }
   
@@ -60,7 +58,7 @@ export default defineComponent({
         alert('There are no more products')
       }else{
         offset = offset + 1;
-        fetchPublicationByPagination({offset: offset, limit: limitShow});
+        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     }
     
