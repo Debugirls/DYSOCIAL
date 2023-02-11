@@ -18,6 +18,8 @@
             <button class="dislike-button" @click="$emit('dislike', publication)"> <img height="30" width="30" src="../assets/karmaNegative.png"/></button>
           </div>
         </div>
+      <div v-else>Lógate para poder seguir a este usuario y darle Karma</div>
+      <router-link class="link" to="/login">INICIAR SESIÓN</router-link>
     </div>
   </div>
 </template>
@@ -36,7 +38,7 @@ export default defineComponent({
   },
   data(){
     return {
-      isAuthenticated: true
+      isAuthenticated: false,
     }
   },
   watch: {
@@ -110,17 +112,25 @@ export default defineComponent({
       font-size: small;
     }
     .follow-button:hover {
-    padding: 0.5% 3% 0.5% 3%;
-    border-radius: 12px;
-    border-color: var(--color-violet400) ;
+      padding: 0.5% 3% 0.5% 3%;
+      border-radius: 12px;
+      border-color: var(--color-violet400) ;
       background: var(--color-violet10);
       color: var(--color-black100);      
   }
     button.like-button, button.dislike-button {
-        border-color: var(--color-violet100);
-        border-radius: 50%;
-        padding: 2px;   
-        margin-right: 6px; 
+      border-color: var(--color-violet100);
+      border-radius: 50%;
+      padding: 2px;   
+      margin-right: 6px; 
+    }
+    .link{
+      color: var(--color-violet600);
+      font-weight: 800;
+      text-shadow: var(--color-green100) 1px 0 2px;
+    }
+    .link:hover, link:active {
+      color: var(--color-violet700)
     }
  </style>
     

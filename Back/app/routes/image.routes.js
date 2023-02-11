@@ -7,7 +7,7 @@ console.log(uploadFile)
 
 module.exports = function(app){
 //http://localhost:8081/uploadFile
-app.post('/uploadFile', uploadFile(), (req, res)=>{
+app.post('/api/uploadFile', uploadFile(), (req, res)=>{
     console.log(req.file);
     res.send('ok');
 })

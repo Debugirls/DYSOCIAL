@@ -68,7 +68,7 @@ export default defineComponent({
     let email = ref("");
     let password = ref("");
     const getToken = async () => {
-      await fetchToken({email: email.value, password: password.value});
+      await fetchToken({email: email.value.toLowerCase(), password: password.value});
       if (localStorage.getItem('token')){
         fetchUserLogin()
     }
@@ -82,7 +82,7 @@ export default defineComponent({
   methods: {
     async signNewUser() {
       const json = new FormData ()
-      json.append('email', this.emailReg); 
+      json.append('email', this.emailReg.toLowerCase()); 
       json.append('password', this.passwordReg);  
       json.append('username', this.usernameReg);
       console.log('Mensaje', {json});
