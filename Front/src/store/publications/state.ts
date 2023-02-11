@@ -4,6 +4,9 @@ export interface IPublicationsState {
   publications: Publication[];
   selectedPublication: Publication | null;
   publicationsFiltered: Publication[];
+  totalItems:   number,
+  totalPages:   number,
+  currentPage:  number,
 }
 
 function state(): IPublicationsState {
@@ -11,6 +14,9 @@ function state(): IPublicationsState {
     publications: [],
     selectedPublication: null,
     publicationsFiltered: [],
+    totalItems:   0,
+    totalPages:   0,
+    currentPage:  0,
   };
 }
 export default state;

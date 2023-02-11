@@ -14,7 +14,18 @@ const mutations: MutationTree<IPublicationsState> = {
   //Mutación para añadir las publicaciones recibidas por parámetro al state
   setPublicationsFiltered(state: IPublicationsState, publicationsFiltered: Publication[]) {
     state.publicationsFiltered = publicationsFiltered;
-},
+  },
+
+  setTotalPages(state: IPublicationsState, totalPages: number) {
+    state.totalPages = totalPages;
+  },
+
+  setCurrentPage(state: IPublicationsState, currentPage: number) {
+    state.currentPage = currentPage;
+  },
+  setTotalItems(state: IPublicationsState, totalItems: number) {
+    state.totalItems = totalItems;
+  }
 };
 
 export default mutations;

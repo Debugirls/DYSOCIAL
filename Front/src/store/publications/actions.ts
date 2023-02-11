@@ -13,6 +13,9 @@ const actions: ActionTree<IPublicationsState, IState> = {
   async fetchPublications({commit}) {
     const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>('/publications');
     commit('setPublications', data.comments);
+    commit('setCurrentPage', data.currentPage);
+    commit('setTotalItems', data.totalItems);
+    commit('setTotalPages', data.totalPages);
   },
   //Action que hace la llamada a la API para acceder a todas las publicaciones según la búsqueda.
   async fetchSearchPublications({commit}) {

@@ -15,6 +15,15 @@ const getters: GetterTree<IPublicationsState, IState> = {
   },
   getPublicationsLength(state){
     return state.publications.length;
+  },
+  getTotalPages(state){
+    return state.totalPages;
+  },
+  getCurrentPage(state){
+    return state.currentPage;
+  },
+  getTotalItems(state){
+    return state.totalItems;
   }
 };
 export default getters;
