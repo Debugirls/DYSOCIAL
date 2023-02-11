@@ -21,7 +21,7 @@
         placeholder=" Puedes introducir un texto con un máximo de 256 caracteres"
         ></textarea>
       <label class="form-label" for="start">Fecha de tu publicación</label>
-      <input v-model="date" type="date" id="start" name="publicationDate" min="2023-02-15">
+      <input v-model="date" type="date" id="start" name="publicationDate" min="2023-01-15">
       <br><br>
       <label class="form-label" for="image">Foto de tu publicación:</label>
       <input @change="insertImage" type="file" name="image" />
@@ -40,8 +40,6 @@ import useUserLogin from "../composables/useUserLogin";
 
 export default defineComponent({
   name: 'newPublication',
-  components: { 
-  },
 
   data() {
     return { 
@@ -54,16 +52,13 @@ export default defineComponent({
     }},
 
   setup(){
-
     const author = useUserLogin()
-
     return {
       author
     }
   },
 
-  methods: {  
-    
+  methods: {    
     insertImage(event: any) {
       console.log(event.target.files);
       this.image = event.target.files[0]

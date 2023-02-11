@@ -2,7 +2,7 @@ const db = require("../models");
 const Comment = db.comments;
 
 const getPagination = (page, size) => {
-    const limit = size ? +size : 2;
+    const limit = size ? +size : 5;
     const offset = page ? page * limit : 0;
 
     return { limit, offset };
@@ -21,11 +21,11 @@ exports.create = (req, res) => {
     const comment = new Comment({
         image: req.body.image,
         title: req.body.title,
-        text: req.body.text, 
+        text: req.body.text,
         author: req.body.author,
         date: req.body.date,
         likes: req.body.likes,
-        published: req.body.published ? req.body.published : false    
+        published: req.body.published ? req.body.published : false
     });
 
     // Save Comment in the database
@@ -43,26 +43,27 @@ exports.create = (req, res) => {
 
 // Retrieve all comments from the database and find by title from the database:
 
+
+//Aqui hago uso de GetSortedAndPaged,introduciendo el offset, limit y maxDate que vienen de la query url
+//(la llamada http con las interrogaciones y los parametros extra)
+//blablabla/publications?page=0&size=24&maxDate=20230101
+//maxDate determina la fecha de post mas tardÍos que vamos a devolver:
+
 exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
     const { page, size } = req.query;
+    const maxDate = req.query.maxDate;
     const { limit, offset } = getPagination(page, size);
+    const publicaciones = Comment.GetSortedAndPaged(offset, limit, maxDate);
+    publicaciones.then(data =>
+        res.send(data) //.catch(err => {
+        //     res
+        //         .status(500)
+        //         .send({ message: "Error retrieving list of comments with date lesser than " + maxDate });
+        // })
+    );
 
-    Comment.paginate(condition, { offset, limit })
-        .then((data) => {
-            res.send({
-                totalItems: data.totalDocs,
-                comments: data.docs,
-                totalPages: data.totalPages,
-                currentPage: data.page - 1,
-            });
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving comments."
-            });
-        });
 };
 
 // Find a single comment with an id
