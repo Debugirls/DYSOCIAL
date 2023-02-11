@@ -29,11 +29,6 @@
       <input class="form-submit" type="submit" value="PUBLICAR" />
     </form>
     </div>
-    <div v-if="publicationDone" >
-      <div class="userCreated">¡Publicación hecha!<br>
-      <router-link class="link" to="/homeuser">observalas</router-link>
-      </div>
-    </div>
 </template>
 
 <script lang="ts">
@@ -54,7 +49,6 @@ export default defineComponent({
       date: "",
       likes: 0,
       error: false,
-      publicationDone: false,
     }},
 
   setup(){
@@ -84,20 +78,18 @@ export default defineComponent({
           alert("Para hacer una nueva publicación has de introducir, al menos, un texto o una foto.")
           this.error = true;
         } else {
-          const newComment = await dysocialApi.post<unknown, AxiosResponse<Publication>>(
+          await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
             '/publications', json);
-          console.log(newComment);
 
           const fileData = new FormData()
           fileData.append('image', this.image, 'testimagen.jpg')
           await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
-            `/uploadFile?publicationId=${newComment.data.id}`, fileData, 
+            '/uploadFile', fileData, 
             {
               headers: { 'Content-Type': 'multipart/form-data' }
             }
           );        
-          console.log("Se ha creado una nueva publicación");  
-          this.publicationDone = true 
+          console.log("Se ha creado una nueva publicación");   
         }
       } catch (err) {
         console.log(err);
@@ -163,14 +155,5 @@ export default defineComponent({
     border-color: var(--color-violet400) ;
       background: var(--color-violet10);
       color: var(--color-black100);      
-  }
-
-      .link{
-      color: var(--color-violet600);
-      font-weight: 800;
-      text-shadow: var(--color-green100) 1px 0 2px;
-  }
-  .link:hover, link:active {
-    color: var(--color-violet700)
   }
 </style>

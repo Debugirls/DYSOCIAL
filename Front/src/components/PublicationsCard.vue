@@ -11,15 +11,15 @@
         <div class="public-author">{{ publication.author }}</div>      
         <div class="public-likes">{{ publication.likes }} <img height="40" width="40" src="../assets/logo-eye.png"/></div>
       </div>
-      <div class="buttons" v-if="isAuthenticated">
+      <div class="buttons" v-if="isAuth">
           <button class="follow-button" @click="$emit('follow', publication.author)">Seguir / Dejar de seguir</button>
           <div class="like-buttons">
             <button class="like-button" @click="$emit('like', publication)" > <img height="30" width="30" src="../assets/karmaPositive.png"/></button>
             <button class="dislike-button" @click="$emit('dislike', publication)"> <img height="30" width="30" src="../assets/karmaNegative.png"/></button>
           </div>
         </div>
-      <div v-else>Lógate para poder seguir a este usuario y darle Karma</div>
-      <router-link class="link" to="/login">INICIAR SESIÓN</router-link>
+      <div v-else class="msg"><router-link class="link" to="/login">Lógate</router-link> para poder seguir a este usuario y darle Karma
+      </div>
     </div>
   </div>
 </template>
@@ -36,16 +36,12 @@ export default defineComponent({
       required: true,
     },
   },
-  data(){
+  setup() {
+    let isAuth = localStorage.token !== undefined && localStorage.token !== null
     return {
-      isAuthenticated: false,
+      isAuth
     }
-  },
-  watch: {
-    $route(){
-      this.isAuthenticated = localStorage.token !== undefined && localStorage.token !== null
-    }
-  },
+  }
 });
 </script>
 
@@ -131,6 +127,9 @@ export default defineComponent({
     }
     .link:hover, link:active {
       color: var(--color-violet700)
+    }
+    .msg {
+      font-size: 13px;
     }
  </style>
     
