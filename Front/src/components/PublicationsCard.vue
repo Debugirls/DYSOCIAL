@@ -12,7 +12,7 @@
         <div class="public-likes">{{ publication.likes }} <img height="40" width="40" src="../assets/logo-eye.png"/></div>
       </div>
       <div class="buttons" v-if="isAuth">
-          <button class="follow-button" @click="$emit('follow', publication.author)">Seguir / Dejar de seguir</button>
+        <button class="follow-button btn-style" @click="$emit('follow', publication.author)">Seguir / Dejar de seguir</button>
           <div class="like-buttons">
             <button class="like-button" @click="$emit('like', publication)" > <img height="30" width="30" src="../assets/karmaPositive.png"/></button>
             <button class="dislike-button" @click="$emit('dislike', publication)"> <img height="30" width="30" src="../assets/karmaNegative.png"/></button>
@@ -95,25 +95,10 @@ export default defineComponent({
     .buttons {
       padding: 0 2% 3% 0;
     }
-    .follow-button {
+ .follow-button {
       border-radius: 5px;
-      background: linear-gradient(
-      90deg,
-      var(--color-violet500),
-      var(--color-violet400),
-      var(--color-violet300),
-      var(--color-violet200),
-      var(--color-green100));
-      color: var(--color-violet100);
       font-size: small;
     }
-    .follow-button:hover {
-      padding: 0.5% 3% 0.5% 3%;
-      border-radius: 12px;
-      border-color: var(--color-violet400) ;
-      background: var(--color-violet10);
-      color: var(--color-black100);      
-  }
     button.like-button, button.dislike-button {
       border-color: var(--color-violet100);
       border-radius: 50%;

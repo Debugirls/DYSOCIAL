@@ -19,6 +19,7 @@ import PublicationsCard from '../components/PublicationsCard.vue';
 import { Publication } from '../models/publications';
 import usePublications from '../composables/usePublications';
 import NavigationButtons from '../components/NavigationButtons.vue'
+import { useRoute } from "vue-router";
 
 export default defineComponent({
   name: 'HomeUserView',
@@ -29,6 +30,11 @@ export default defineComponent({
   
   setup() {
     const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
+    const route = useRoute()
+    if(route.query.titleQuery) {
+      console.log("---We got a query! title=", String(route.query.titleQuery))
+      fetchPublicationByTitle(String(route.query.titleQuery))
+    }
     fetchPublications();
     let inputFilter = ref("");
     const limitShow = 10;
