@@ -31,6 +31,7 @@ const actions: ActionTree<IPublicationsState, IState> = {
   //Action que hace la llamada a la API para acceder a todas las publicaciones segun offset y limit. Usamos las mutations para guardarlos. 
   async fetchPublicationByPagination({commit}, pagination: Pagination) {
       const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>(`/publications?page=${pagination.offset}&size=${pagination.limit}`);
+      console.log({data})
       commit('setPublicationsFiltered', data.comments);
       commit('setCurrentPage', data.currentPage);
       commit('setTotalItems', data.totalItems);

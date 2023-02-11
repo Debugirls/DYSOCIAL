@@ -8,9 +8,10 @@ function upploadFile(){
             cb(null, path.join(__dirname, '../public' ))
           },
       
-        filename: function (_req, file, cb) {
+        filename: function (req, file, cb) {
+          console.log(req.query, req.params);
           const extension = file.originalname.slice(file.originalname.lastIndexOf('.'));
-          cb(null, Date.now() + extension);
+          cb(null, req.params.publicationId + extension);
         }
       })
 
