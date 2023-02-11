@@ -7,7 +7,6 @@ export interface IPublicationsState {
   totalItems:   number,
   totalPages:   number,
   currentPage:  number,
-  totalKarma: number;
 }
 
 function state(): IPublicationsState {
@@ -17,8 +16,7 @@ function state(): IPublicationsState {
     publicationsFiltered: [],
     totalItems:   0,
     totalPages:   0,
-    currentPage:  0,
-    totalKarma: 0,
+    currentPage:  0
   };
 }
 export default state;

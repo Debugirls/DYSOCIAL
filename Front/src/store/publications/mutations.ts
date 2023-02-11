@@ -26,9 +26,6 @@ const mutations: MutationTree<IPublicationsState> = {
   setTotalItems(state: IPublicationsState, totalItems: number) {
     state.totalItems = totalItems;
   },
-  setTotalKarma(state: IPublicationsState, totalKarma: number) {
-    state.totalKarma = totalKarma;
-  },
 };
 
 export default mutations;
