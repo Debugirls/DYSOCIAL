@@ -19,6 +19,7 @@ const usePublications = () => {
     fetchPublications: () => store.dispatch("publications/fetchPublications"),
     fetchPublicationByTitle: (publicationTitle: string) => store.dispatch('publications/fetchPublicationByTitle', publicationTitle),
     fetchPublicationByPagination: (pagination: Pagination) => store.dispatch('publications/fetchPublicationByPagination', pagination),
+    setCurrentPage: (page: number) => store.dispatch('publications/setCurrentPage', page),
   };
 };
 
