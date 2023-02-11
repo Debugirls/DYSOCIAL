@@ -32,13 +32,14 @@ export default defineComponent({
     const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
     const route = useRoute()
     const titleQuery = route.query.titleQuery ? String(route.query.titleQuery) : "";
+    const authorQuery = route.query.authorQuery ? String(route.query.authorQuery) : "";
     fetchPublications();
     let inputFilter = ref("");
     const limitShow = 10;
     const showAllPublications = () => {
-      fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery});
+      fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
       }
-    fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery});
+    fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
 
     //Evento que se lanza al hacer click en 'See previous 2' para mostrar los anteriores 2 productos. 
     let offset = 0;
@@ -47,7 +48,7 @@ export default defineComponent({
         alert('There are no more previous products')
       }else{
         offset = offset - 1;
-        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery});
+        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     }
   
@@ -57,7 +58,7 @@ export default defineComponent({
         alert('There are no more products')
       }else{
         offset = offset + 1;
-        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery});
+        fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     }
     

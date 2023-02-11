@@ -34,6 +34,9 @@ const actions: ActionTree<IPublicationsState, IState> = {
       if(pagination.title && pagination.title.length > 0) {
         searchQuery = searchQuery + `&title=${pagination.title}`
       }
+      if(pagination.author && pagination.author.length > 0) {
+        searchQuery = searchQuery + `&author=${pagination.author}`
+      }
       const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>(searchQuery);
       console.log({data})
       commit('setPublicationsFiltered', data.comments);
