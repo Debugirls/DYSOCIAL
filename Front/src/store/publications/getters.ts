@@ -24,6 +24,9 @@ const getters: GetterTree<IPublicationsState, IState> = {
   },
   getTotalItems(state){
     return state.totalItems;
+  },
+  getTotalKarma(state){
+    return state.totalKarma;
   }
 };
 export default getters;

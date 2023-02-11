@@ -21,7 +21,7 @@ import usePublications from '../composables/usePublications';
 import NavigationButtons from '../components/NavigationButtons.vue'
 
 export default defineComponent({
-  name: 'HomeView',
+  name: 'HomeUserView',
   components: {
     PublicationsCard,
     NavigationButtons
@@ -37,7 +37,7 @@ export default defineComponent({
       }
     fetchPublicationByPagination({offset: 0, limit: limitShow});
 
-    //Evento que se lanza al hacer click en 'See previous 2' para mostrar los anteriores 2 productos. 
+    //Evento que se lanza al hacer click en 'See previous' para mostrar los anteriores productos. 
   let offset = 0;
     const showPrevious = () =>{
       if (offset == 0){
@@ -48,7 +48,7 @@ export default defineComponent({
       }
     }
   
-    //Evento que se lanza al hacer click en 'See next 2' para mostrar los siguientes 2 productos. 
+    //Evento que se lanza al hacer click en 'See next' para mostrar los siguientes productos. 
     const showNext = () =>{
       if (offset >= totalPages.value){
         alert('There are no more products')
