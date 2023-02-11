@@ -67,7 +67,7 @@ http://localhost:8080/
 <ul>- Arreglar error de la imagen subida de las publicaciones. </ul>
 <ul>- Ocultar barra botones en la publicación si el user no está logado</ul>
 <ul>- Verificar corracto funcionamiento de las búsquedas (por autor, título, fecha e id)</ul>
-<ul>- Crear store para guardar +- karma</ul>
+<ul>- Crear store para guardar +- karma. Falta unir con el backend</ul>
 <ul>- Revisar diseño botones karma</ul>
 <ul>- Añadir algún tipo de notificación/aviso simpático al hacer una publicación con éxito</ul>
 <ul>- Pulir la maquetación(ponerlo más bonito, estanadrizar y unificar estilos, revisar qué falta)</ul>
