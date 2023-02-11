@@ -53,17 +53,22 @@ exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
     const { page, size } = req.query;
-    const maxDate = req.query.maxDate;
     const { limit, offset } = getPagination(page, size);
-    const publicaciones = Comment.GetSortedAndPaged(offset, limit, maxDate);
-    publicaciones.then(data =>
-        res.send(data) //.catch(err => {
-        //     res
-        //         .status(500)
-        //         .send({ message: "Error retrieving list of comments with date lesser than " + maxDate });
-        // })
-    );
 
+    Comment.paginate(condition, { offset, limit })
+        .then((data) => {
+            res.send({
+                totalItems: data.totalDocs,
+                comments: data.docs,
+                totalPages: data.totalPages,
+                currentPage: data.page - 1,
+            });
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving comments."
+            });
+        });
 };
 
 // Find a single comment with an id
