@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
-                <h5>Information</h5>
+                <h5>Información:</h5>
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
                     <h6>Email</h6>
