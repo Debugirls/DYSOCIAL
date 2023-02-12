@@ -5,7 +5,7 @@
     </div>
     <div class="public-info">
       <div class="public-title">{{ publication.title }}</div>
-      <div class="public-text">{{ publication.text }} </div>
+      <p class="public-text">{{ publication.text }} </p>
       <div class="public-data">
         <div class="public-date">{{ publication.date }}</div>
         <div class="public-author">{{ publication.author }}</div>      
@@ -49,7 +49,7 @@ export default defineComponent({
 
 <style scoped>
     .publication {
-      width: 75%px;
+      width: 100%;
       display: flex;
       border: 2.5px dotted var(--color-violet300);
       border-radius: 10px;
@@ -75,7 +75,7 @@ export default defineComponent({
       font-family: 'Source Code pro';
       padding-left: 7px;
       color: var(--color-violet700);
-      text-shadow: 3px 3px 3px var(--color-green100);
+      text-shadow: 1px 1px 1px var(--color-green100);
     }
     .public-text {
       text-align: justify;
@@ -83,7 +83,7 @@ export default defineComponent({
       color: var(--color-violet600)
     }
     .public-data {
-      color: var(--color-success300);
+      color: var(--color-grey200);
       padding-right: 2%;
     }
     .public-data, .buttons {
@@ -95,9 +95,9 @@ export default defineComponent({
       margin-right: 10px;
     }
     .buttons {
-      padding: 0 2% 3% 0;
+      padding: 0 1% 1% 0;
     }
- .follow-button {
+    .follow-button {
       border-radius: 5px;
       font-size: small;
     }
