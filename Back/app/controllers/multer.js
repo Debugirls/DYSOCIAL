@@ -10,7 +10,7 @@ function upploadFile(){
       
         filename: function (_req, file, cb) {
           const extension = file.originalname.slice(file.originalname.lastIndexOf('.'));
-          cb(null, Date.now() + extension);
+          cb(null, req.params.publicationId + extension);
         }
       })
 
