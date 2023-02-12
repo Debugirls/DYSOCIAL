@@ -25,7 +25,7 @@ const mutations: MutationTree<IPublicationsState> = {
   },
   setTotalItems(state: IPublicationsState, totalItems: number) {
     state.totalItems = totalItems;
-  }
+  },
 };
 
 export default mutations;

@@ -16,7 +16,7 @@ function state(): IPublicationsState {
     publicationsFiltered: [],
     totalItems:   0,
     totalPages:   0,
-    currentPage:  0,
+    currentPage:  0
   };
 }
 export default state;

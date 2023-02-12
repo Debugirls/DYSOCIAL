@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.follow-button {
+    @apply inline-block px-6 py-4 rounded-full shadow-sm font-medium transition duration-500 ease-in-out transform hover:scale-105
+}
+
+.btn-style {
+    @apply bg-indigo-800 text-white hover:bg-indigo-500
+}

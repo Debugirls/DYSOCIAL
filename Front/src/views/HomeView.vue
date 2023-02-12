@@ -4,9 +4,6 @@
       <PublicationsCard v-for="publication in publicationsFiltered"
       :key="publication.id"
       :publication="publication"
-      @like="like"
-      @dislike="dislike"
-      @follow="follow"
       />
     </div>
     <NavigationButtons @previous="showPrevious" @next="showNext"/>
@@ -16,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import PublicationsCard from '../components/PublicationsCard.vue';
-import { Publication } from '../models/publications';
+//import { Publication } from '../models/publications';
 import usePublications from '../composables/usePublications';
 import NavigationButtons from '../components/NavigationButtons.vue'
 
@@ -28,16 +25,16 @@ export default defineComponent({
   },
   
   setup() {
-    const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination } = usePublications();
+    const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
     fetchPublications();
     let inputFilter = ref("");
-    const limitShow = 2;
+    const limitShow = 4;
     const showAllPublications = () => {
       fetchPublicationByPagination({offset: 0, limit: limitShow});
       }
     fetchPublicationByPagination({offset: 0, limit: limitShow});
 
-    //Evento que se lanza al hacer click en 'See previous 2' para mostrar los anteriores 2 productos. 
+    //Evento que se lanza al hacer click en 'See previous' para mostrar los anteriores productos. 
   let offset = 0;
     const showPrevious = () =>{
       if (offset == 0){
@@ -48,7 +45,7 @@ export default defineComponent({
       }
     }
   
-    //Evento que se lanza al hacer click en 'See next 2' para mostrar los siguientes 2 productos. 
+    //Evento que se lanza al hacer click en 'See next' para mostrar los siguientes productos. 
     const showNext = () =>{
       if (offset >= publicationsLength.value){
         alert('There are no more products')
@@ -65,9 +62,6 @@ export default defineComponent({
       showAllPublications,
       showPrevious,
       showNext,
-      like: (publication: Publication) => publication.likes += 1,
-      dislike: (publication: Publication) => publication.likes -=1,
-      follow: (publication: Publication) => publication ,//TODO:botón de seguir
     }
   }
 });

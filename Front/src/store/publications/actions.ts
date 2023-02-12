@@ -26,16 +26,26 @@ const actions: ActionTree<IPublicationsState, IState> = {
   async fetchPublicationByTitle({commit}, publicationTitle: string) {
     const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>(`/publications/?title=${publicationTitle}`);
     commit('setPublicationsFiltered', data.comments);
-},
+  },
 
   //Action que hace la llamada a la API para acceder a todas las publicaciones segun offset y limit. Usamos las mutations para guardarlos. 
   async fetchPublicationByPagination({commit}, pagination: Pagination) {
       const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>(`/publications?page=${pagination.offset}&size=${pagination.limit}`);
+      let searchQuery = `/publications?page=${pagination.offset}&size=${pagination.limit}`
+      if(pagination.title && pagination.title.length > 0) {
+        searchQuery = searchQuery + `&title=${pagination.title}`
+      }
+      if(pagination.author && pagination.author.length > 0) {
+        searchQuery = searchQuery + `&author=${pagination.author}`
+      }
+      const {data} = await dysocialApi.get<unknown, AxiosResponse<PaginatedResponse>>(searchQuery);
+      console.log({data})
       commit('setPublicationsFiltered', data.comments);
       commit('setCurrentPage', data.currentPage);
       commit('setTotalItems', data.totalItems);
       commit('setTotalPages', data.totalPages);
   },
+
 
   setCurrentPage({commit}, page: number) {
     commit('setCurrentPage', page);

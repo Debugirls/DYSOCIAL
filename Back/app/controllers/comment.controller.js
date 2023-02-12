@@ -51,7 +51,14 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+    const author = req.query.author;
+    var condition = {};
+    if(title !== undefined) {
+        condition["title"] = { $regex: new RegExp(title), $options: "i" };
+    }
+    if(author !== undefined) {
+        condition["author"] = { $regex: new RegExp(author), $options: "i" };
+    }
     const { page, size } = req.query;
     const { limit, offset } = getPagination(page, size);
 

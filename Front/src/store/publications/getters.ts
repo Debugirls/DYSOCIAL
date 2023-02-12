@@ -24,6 +24,6 @@ const getters: GetterTree<IPublicationsState, IState> = {
   },
   getTotalItems(state){
     return state.totalItems;
-  }
+  },
 };
 export default getters;
