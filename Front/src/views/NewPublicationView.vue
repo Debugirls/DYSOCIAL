@@ -121,7 +121,7 @@ export default defineComponent({
     font-family: 'Oxygen', sans-serif;
     display: flexbox;
     align-items: initial;
-    background-color: #cbd5e1 ;
+    background-color: #c7d2fe ;
     margin: 2% 20% 2% 20%;
     padding: 2%;
     border: 1px  var(--color-violet900);
