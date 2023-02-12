@@ -68,7 +68,7 @@ export default defineComponent({
       const author = this.author
       const json = new FormData ()
       json.append('title', this.title)
-      json.append('image', (this.image as any).name.slice((this.image as any).name.lastIndexOf('.')))  
+      json.append('image', (this.image as any).name.slice((this.image as any).name.lastIndexOf('.')).toLowerCase())  
       json.append('text', this.text)
       json.append('author', author.userLogin.value?.username) 
       json.append('date', this.date)

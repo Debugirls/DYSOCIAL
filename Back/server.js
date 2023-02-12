@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const requestLogger = require("./app/middlewares/requestLogger")
+const requestLogger = require("./app/middlewares/requestLogger");
+const path = require('path')
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(requestLogger);
 
 // parse requests of content-type - application/json
 app.use(express.json());
+
+app.use("/images", express.static(path.join(__dirname + '/public')));
 
 // parse requests of content-type - application/x-www-form-urlencoded
 //app.use(express.urlencoded({ extended: true }));
