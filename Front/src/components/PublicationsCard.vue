@@ -1,7 +1,7 @@
 <template>
   <div class="publication">
     <div class="public-img">
-      <img src="publication.image" alt="Imagen de la publicación" />
+      <img src= "publication.image" alt="Imagen de la publicación" />
     </div>
     <div class="public-info">
       <div class="public-title">{{ publication.title }}</div>
@@ -14,8 +14,8 @@
       <div class="buttons" v-if="isAuth">
         <button class="follow-button btn-style" @click="$emit('follow', publication.author)">Seguir / Dejar de seguir</button>
           <div class="like-buttons">
-            <button class="like-button" @click="$emit('like', publication)" > <img height="30" width="30" src="../assets/karmaPositive.png"/></button>
-            <button class="dislike-button" @click="$emit('dislike', publication)"> <img height="30" width="30" src="../assets/karmaNegative.png"/></button>
+            <button class="like-button" @click.once="$emit('like', publication)" > <img height="30" width="30" src="../assets/karmaPositive.png"/></button>
+            <button class="dislike-button" @click.once="$emit('dislike', publication)"> <img height="30" width="30" src="../assets/karmaNegative.png"/></button>
           </div>
         </div>
       <div v-else class="msg"><router-link class="link" to="/login">Lógate</router-link> para poder seguir a este usuario y darle Karma
@@ -25,6 +25,7 @@
 </template>
 
 <script lang="ts">
+//import publicationsModule from '@/store/publications';
 import { defineComponent, PropType } from 'vue';
 import { Publication } from "../models/publications";
 
@@ -36,12 +37,13 @@ export default defineComponent({
       required: true,
     },
   },
+  
   setup() {
-    let isAuth = localStorage.token !== undefined && localStorage.token !== null
+    let isAuth = localStorage.token !== undefined && localStorage.token !== null;
     return {
       isAuth
     }
-  }
+  },
 });
 </script>
 

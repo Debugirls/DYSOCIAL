@@ -4,8 +4,8 @@
       <PublicationsCard v-for="publication in publicationsFiltered"
       :key="publication.id"
       :publication="publication"
-      @like="like"
-      @dislike="dislike"
+      @like.once="like"
+      @dislike.once="dislike"
       @follow="follow"
       />
     </div>
@@ -79,8 +79,9 @@ export default defineComponent({
     async like() {
       const likeIt = (publication: Publication) => {
       publication.likes += 1};
+      
       try{
-        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/:id', likeIt) 
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/' + this.publications.id , likeIt ) 
         console.log("Update SUCCESS!")
       } catch(error) {
         console.log(error)
@@ -92,7 +93,7 @@ export default defineComponent({
       const dislikeIt = (publication: Publication) => {
       publication.likes -= 1};
       try{
-        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/:id', dislikeIt) 
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/:this.publications.id', dislikeIt) 
         console.log("Update SUCCESS!")
       } catch(error) {
         console.log(error)
