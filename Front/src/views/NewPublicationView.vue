@@ -112,12 +112,16 @@ export default defineComponent({
     margin-top: 2%;
     font-size: 2.5rem;
     font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+  }
+  .container {
     text-align: center;
   }
   .form {
+    font-family: 'Oxygen', sans-serif;
     display: flexbox;
     align-items: initial;
-    background-color: var(--color-violet10);
+    background-color: #cbd5e1 ;
     margin: 2% 20% 2% 20%;
     padding: 2%;
     border: 1px  var(--color-violet900);
