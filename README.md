@@ -53,14 +53,6 @@ http://localhost:8080/
 
 ## TODO:
 
-<i>Cosas a revisar en el back: </i>
-<p>
-<ul>- Revisar max date (se printean cosas del futuro)</ul>
-<ul>- Búsqueda por fecha</ul>
-<ul>- Búsqueda por id</ul>
-
-<ul>- Quitar hora de la fecha que se devuelve a las publicaciones </ul>
-</p>
 <i>Cosas a revisar en el front: </i>
 <p>
 <ul>- Arreglar error de la imagen subida de las publicaciones. </ul>
