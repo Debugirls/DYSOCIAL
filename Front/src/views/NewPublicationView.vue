@@ -24,7 +24,7 @@
       <input v-model="date" type="date" id="start" name="publicationDate" min="2023-01-15">
       <br><br>
       <label class="form-label" for="image">Foto de tu publicación:</label>
-      <input @change="insertImage" type="file" name="image" />
+      <input @change="insertImage" type="file" name="image" accept="image/*" >
       <br><br>
       <input class="btn-style follow-button" type="submit" value="PUBLICAR" />
     </form>
@@ -67,7 +67,8 @@ export default defineComponent({
     async createNew() {
       const author = this.author
       const json = new FormData ()
-      json.append('title', this.title)  
+      json.append('title', this.title)
+      json.append('image', (this.image as any).name.slice((this.image as any).name.lastIndexOf('.')).toLowerCase())  
       json.append('text', this.text)
       json.append('author', author.userLogin.value?.username) 
       json.append('date', this.date)
@@ -78,13 +79,13 @@ export default defineComponent({
           alert("Para hacer una nueva publicación has de introducir, al menos, un texto o una foto.")
           this.error = true;
         } else {
-          await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
+          const newComment = await dysocialApi.post<unknown, AxiosResponse<Publication>>(
             '/publications', json);
 
-          const fileData = new FormData()
-          fileData.append('image', this.image, 'testimagen.jpg')
+          const fileData = new FormData();
+          fileData.append('image', this.image);
           await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
-            '/uploadFile', fileData, 
+            `/uploadFile?publicationId=${newComment.data.id}`, fileData, 
             {
               headers: { 'Content-Type': 'multipart/form-data' }
             }
@@ -93,7 +94,7 @@ export default defineComponent({
         }
       } catch (err) {
         console.log(err);
-        alert('404 not found')
+        alert(err)
       }
     }
   }

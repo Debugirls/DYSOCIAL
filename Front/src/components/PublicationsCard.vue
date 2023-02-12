@@ -1,7 +1,7 @@
 <template>
   <div class="publication">
-    <div class="public-img">
-      <img src= "publication.image" alt="Imagen de la publicación" />
+    <div class="public-img"> 
+      <img :src= "`http://localhost:8081/images/${publication.id}${publication.image}`" alt="Imagen de la publicación" /> 
     </div>
     <div class="public-info">
       <div class="public-title">{{ publication.title }}</div>

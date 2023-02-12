@@ -45,6 +45,7 @@ const actions: ActionTree<IPublicationsState, IState> = {
       commit('setTotalPages', data.totalPages);
   },
 
+
   setCurrentPage({commit}, page: number) {
     commit('setCurrentPage', page);
   }
