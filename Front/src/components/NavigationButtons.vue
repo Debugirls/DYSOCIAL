@@ -1,8 +1,8 @@
 <template>
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="button" href="#" @click="$emit('previous')">« Anterior</a></li>
-        <li class="page-item"><a class="button" href="#" @click="$emit('next')">Siguiente »</a></li>
+        <li class="page-item"><a class="page-prev" href="#" @click="$emit('previous')">« Anterior</a></li>
+        <li class="page-item"><a class="page-next" href="#" @click="$emit('next')">Siguiente »</a></li>
       </ul>
     </nav>
 </template>
