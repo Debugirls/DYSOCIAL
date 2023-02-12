@@ -24,7 +24,7 @@
       <input v-model="date" type="date" id="start" name="publicationDate" min="2023-01-15">
       <br><br>
       <label class="form-label" for="image">Foto de tu publicación:</label>
-      <input @change="insertImage" type="file" name="image" />
+      <input @change="insertImage" type="file" name="image" accept="image/*" >
       <br><br>
       <input class="form-submit" type="submit" value="PUBLICAR" />
     </form>
@@ -88,8 +88,8 @@ export default defineComponent({
             '/publications', json);
           console.log(newComment);
 
-          const fileData = new FormData()
-          fileData.append('image', this.image, 'testimagen.jpg')
+          const fileData = new FormData();
+          fileData.append('image', this.image);
           await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
             `/uploadFile?publicationId=${newComment.data.id}`, fileData, 
             {
