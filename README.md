@@ -53,29 +53,19 @@ http://localhost:8080/
 
 ## TODO:
 
-<i>Cosas a revisar en el back: </i>
-<p>
-<ul>- B�squeda por autor</ul>
-<ul>- B�squeda por t�tulo</ul>
-<ul>- B�squeda por fecha</ul>
-<ul>- B�squeda por id</ul>
-<ul>- Ordenar por fecha</ul>
-<ul>- Quitar hora de la fecha que se devuelve a las publicaciones </ul>
-</p>
 <i>Cosas a revisar en el front: </i>
 <p>
 <ul>- Arreglar error de la imagen subida de las publicaciones. </ul>
-<ul>- Ocultar barra botones en la publicaci�n si el user no est� logado</ul>
-<ul>- Verificar corracto funcionamiento de las b�squedas (por autor, t�tulo, fecha e id)</ul>
+<ul>- Ocultar barra botones en la publicación si el user no está logado</ul>
 <ul>- Crear store para guardar +- karma. Falta unir con el backend</ul>
-<ul>- Revisar dise�o botones karma</ul>
-<ul>- A�adir alg�n tipo de notificaci�n/aviso simp�tico al hacer una publicaci�n con �xito</ul>
-<ul>- Pulir la maquetaci�n(ponerlo m�s bonito, estanadrizar y unificar estilos, revisar qu� falta)</ul>
-<ul>- A�adir fotos Keepcoding a los perfiles de usuario</ul>
+<ul>- Revisar diseño botones karma</ul>
+<ul>- Añadir algún tipo de notificación/aviso simpático al hacer una publicación con éxito</ul>
+<ul>- Pulir la maquetación(ponerlo más bonito, estanadrizar y unificar estilos, revisar qué falta)</ul>
+<ul>- Añadir fotos Keepcoding a los perfiles de usuario</ul>
 <ul>- Implantar follow someone</ul>
 <ul>- Diferenciar HomeView de HomeUserView en seguidores</ul>
 </ul>
-<ul>* Hacer presentaci�n</ul>
+<ul>* Hacer presentación</ul>
 </p>
 
 ## IMPORTANTE:
@@ -87,5 +77,5 @@ Cuando trabajemos comprobar que todo lo que funcionaba cuando hemos hecho pull s
 
 <b>Comuniquemonos y actualicemos el readme</b>
 <p>
-Si algo nuevo falla pero habéis avanzado dejadlo comentado en el código y añadidlo en el TODO aquí presente. Si hay algo importante que decirnos a todas, añadamoslo aquí también. Y cada vez que nos vayamos o vayamos a trabajar de nuevo revisemos el readme. Esta justo aquí, es más fácil que mirar discord o whatsapp. Pero por eso mismo seamos también limpias, quitemos lo ya hecho y no añadamos cosas duplicadas ni innecesarias.
+Si algo nuevo falla pero habÃ©is avanzado dejadlo comentado en el cÃ³digo y aÃ±adidlo en el TODO aquÃ­ presente. Si hay algo importante que decirnos a todas, aÃ±adamoslo aquÃ­ tambiÃ©n. Y cada vez que nos vayamos o vayamos a trabajar de nuevo revisemos el readme. Esta justo aquÃ­, es mÃ¡s fÃ¡cil que mirar discord o whatsapp. Pero por eso mismo seamos tambiÃ©n limpias, quitemos lo ya hecho y no aÃ±adamos cosas duplicadas ni innecesarias.
 </p>

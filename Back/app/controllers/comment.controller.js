@@ -52,7 +52,11 @@ console.log(req.body)
 exports.findAll = (req, res) => {
     const title = req.query.title;
     const author = req.query.author;
-    var condition = {};
+    const currentDate = new Date();
+    const zeroPad = (num, places) => String(num).padStart(places, '0')
+
+    var condition = { "date": { $lte: `${currentDate.getFullYear()}-${zeroPad(currentDate.getMonth() + 1, 2)}-${currentDate.getDate()}` }};
+    console.log("condition is ", condition)
     if(title !== undefined) {
         condition["title"] = { $regex: new RegExp(title), $options: "i" };
     }
@@ -62,7 +66,7 @@ exports.findAll = (req, res) => {
     const { page, size } = req.query;
     const { limit, offset } = getPagination(page, size);
 
-    Comment.paginate(condition, { offset, limit })
+    Comment.paginate(condition, { offset, limit, sort: { date: "desc" } })
         .then((data) => {
             res.send({
                 totalItems: data.totalDocs,

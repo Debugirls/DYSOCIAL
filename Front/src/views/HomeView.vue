@@ -38,7 +38,7 @@ export default defineComponent({
   let offset = 0;
     const showPrevious = () =>{
       if (offset == 0){
-        alert('There are no more previous products')
+        alert('No hay publicaciones previas')
       }else{
         offset = offset - 1;
         fetchPublicationByPagination({offset: offset, limit: limitShow});
@@ -48,7 +48,7 @@ export default defineComponent({
     //Evento que se lanza al hacer click en 'See next' para mostrar los siguientes productos. 
     const showNext = () =>{
       if (offset >= publicationsLength.value){
-        alert('There are no more products')
+        alert('No hay más publicaciones')
       }else{
         offset = offset + 1;
         fetchPublicationByPagination({offset: offset, limit: limitShow});

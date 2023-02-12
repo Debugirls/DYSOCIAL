@@ -4,8 +4,8 @@
       <PublicationsCard v-for="publication in publicationsFiltered"
       :key="publication.id"
       :publication="publication"
-      @like="like"
-      @dislike="dislike"
+      @like.once="like"
+      @dislike.once="dislike"
       @follow="follow"
       />
     </div>
@@ -47,7 +47,7 @@ export default defineComponent({
   let offset = 0;
     const showPrevious = () =>{
       if (offset == 0){
-        alert('There are no more previous products')
+        alert('No hay publicaciones previas')
       }else{
         offset = offset - 1;
         fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
@@ -57,7 +57,7 @@ export default defineComponent({
     //Evento que se lanza al hacer click en 'See next' para mostrar los siguientes productos. 
     const showNext = () =>{
       if (offset >= totalPages.value){
-        alert('There are no more products')
+        alert('No hay más publicaciones')
       }else{
         offset = offset + 1;
         fetchPublicationByPagination({offset: offset, limit: limitShow, title: titleQuery, author: authorQuery});
@@ -79,8 +79,9 @@ export default defineComponent({
     async like() {
       const likeIt = (publication: Publication) => {
       publication.likes += 1};
+      
       try{
-        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications', likeIt) 
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/' + this.publications.id , likeIt ) 
         console.log("Update SUCCESS!")
       } catch(error) {
         console.log(error)
@@ -92,7 +93,7 @@ export default defineComponent({
       const dislikeIt = (publication: Publication) => {
       publication.likes -= 1};
       try{
-        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications', dislikeIt) 
+        await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/:this.publications.id', dislikeIt) 
         console.log("Update SUCCESS!")
       } catch(error) {
         console.log(error)
