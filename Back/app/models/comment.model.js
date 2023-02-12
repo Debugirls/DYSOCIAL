@@ -4,7 +4,7 @@ module.exports = (mongoose, mongoosePaginate) => {
         title: String,
         text: String,
         author: String,
-        date: Date,
+        date: String,
         likes: Number,
         published: Boolean,
     }, { timestamps: true });

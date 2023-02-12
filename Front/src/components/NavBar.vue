@@ -42,7 +42,6 @@
         <div class="navbar-brand">
           <img class="d-inline-block align-top logo" src="../assets/logo-eye.png" alt="DySocial logo"/>
         </div>      
-        <FilterBar/>  
       </div>
       <div class="group-buttons">
         <!--Home-->

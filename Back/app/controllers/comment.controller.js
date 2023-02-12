@@ -62,7 +62,7 @@ exports.findAll = (req, res) => {
     const { page, size } = req.query;
     const { limit, offset } = getPagination(page, size);
 
-    Comment.paginate(condition, { offset, limit })
+    Comment.paginate(condition, { offset, limit, sort: { date: "desc" } })
         .then((data) => {
             res.send({
                 totalItems: data.totalDocs,

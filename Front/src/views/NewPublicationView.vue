@@ -1,6 +1,6 @@
 <template>
     <div class="createpubl">
-        <h3>¿Quieres crear una nueva publicación?</h3>
+        <h3> Crear una nueva publicación</h3>
     <form @submit.prevent="createNew" class="form">
       <label class="form-label" for="title">Título:</label>
       <input
@@ -26,7 +26,7 @@
       <label class="form-label" for="image">Foto de tu publicación:</label>
       <input @change="insertImage" type="file" name="image" />
       <br><br>
-      <input class="form-submit" type="submit" value="PUBLICAR" />
+      <input class="btn-style follow-button" type="submit" value="PUBLICAR" />
     </form>
     </div>
 </template>
@@ -111,17 +111,20 @@ export default defineComponent({
     color: var(--color-violet700);
     margin-top: 2%;
     font-size: 2.5rem;
-    font-family: 'Source Code Pro';
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+  }
+  .container {
     text-align: center;
-    text-shadow: 3px 3px 3px var(--color-green100);
   }
   .form {
+    font-family: 'Oxygen', sans-serif;
     display: flexbox;
     align-items: initial;
-    background-color: var(--color-violet10);
+    background-color: #c7d2fe ;
     margin: 2% 20% 2% 20%;
     padding: 2%;
-    border: 1px dotted var(--color-violet700);
+    border: 1px  var(--color-violet900);
     border-radius: 20px;
     flex-wrap: wrap;
   }
