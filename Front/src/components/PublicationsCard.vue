@@ -1,7 +1,7 @@
 <template>
-  <div class="publication">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg">
     <div class="public-img"> 
-      <img :src= "`http://localhost:8081/images/${publication.id}${publication.image}`" alt="Imagen de la publicación" /> 
+      <img height="30" width="30" class="rounded-t-lg" :src= "`http://localhost:8081/images/${publication.id}${publication.image}`" alt="Imagen de la publicación" /> 
     </div>
     <div class="public-info">
       <div class="public-title">{{ publication.title }}</div>
@@ -51,14 +51,16 @@ export default defineComponent({
     .publication {
       width: 100%;
       display: flex;
-      border: 2.5px dotted var(--color-violet300);
+      border: 2.5px color #6b7280;
       border-radius: 10px;
-      background-color: var(--color-violet10);
+      background-color: #f3f4f6;
       margin: 2%;
     }
     .public-img > img {
-      width: 100%;
-      height: 100%;
+      width: auto;
+      height: auto;
+      max-height: 500px;
+      max-width: 500px;
       border-start-start-radius: 10px;
       border-bottom-left-radius: 10px;
     }
@@ -72,10 +74,9 @@ export default defineComponent({
     .public-title {
       margin-bottom: 2%;
       font-size: 40px;
-      font-family: 'Source Code pro';
+      font-family: 'Playfair Display', serif;
       padding-left: 7px;
       color: var(--color-violet700);
-      text-shadow: 1px 1px 1px var(--color-green100);
     }
     .public-text {
       text-align: justify;
@@ -118,5 +119,8 @@ export default defineComponent({
     .msg {
       font-size: 13px;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
  </style>
     
