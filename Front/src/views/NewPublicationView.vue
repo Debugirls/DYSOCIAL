@@ -67,7 +67,8 @@ export default defineComponent({
     async createNew() {
       const author = this.author
       const json = new FormData ()
-      json.append('title', this.title)  
+      json.append('title', this.title)
+      json.append('image', (this.image as any).name.slice((this.image as any).name.lastIndexOf('.')))  
       json.append('text', this.text)
       json.append('author', author.userLogin.value?.username) 
       json.append('date', this.date)
@@ -93,7 +94,7 @@ export default defineComponent({
         }
       } catch (err) {
         console.log(err);
-        alert('404 not found')
+        alert(err)
       }
     }
   }
