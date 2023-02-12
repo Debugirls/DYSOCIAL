@@ -31,10 +31,12 @@ export default defineComponent({
   },
   
   setup() {
-    const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
+    const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages, setCurrentPage } = usePublications();
     const route = useRoute()
+    setCurrentPage(0);
     const titleQuery = route.query.titleQuery ? String(route.query.titleQuery) : "";
     const authorQuery = route.query.authorQuery ? String(route.query.authorQuery) : "";
+    
     fetchPublications();
     let inputFilter = ref("");
     const limitShow = 10;
