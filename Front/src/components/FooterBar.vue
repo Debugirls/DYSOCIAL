@@ -11,7 +11,7 @@
             </a> 
         </div>
         <div class="footer-left">
-            <img class="logo"  src="../assets/logo.png" alt="DySocial logo"/>
+            <img class="logo" src="../assets/logoLight.png" alt="DySocial logo"/>
             <p>DySocial &copy; 2023</p>
         </div>
     </footer>
