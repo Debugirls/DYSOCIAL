@@ -69,7 +69,6 @@ export default defineComponent({
     
     //Evento que se lanza al hacer click en 'Like' para añadir karma
     async function like(publication: Publication) {
-      console.log(publication)
       publication.likes += 1;
       try{
         await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/' + publication.id , publication ) 
@@ -82,7 +81,6 @@ export default defineComponent({
 
     //Evento que se lanza al hacer click en 'disLike' para añadir karma
     async function dislike(publication: Publication) {
-      console.log(publication)
       publication.likes -= 1;
       try{
         await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/' + publication.id , publication ) 
