@@ -3,22 +3,17 @@
     <NavBar/>
     <router-view :key="$route.fullPath"/>
   </div>
-  <div>
-    <FooterBar/>
-  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent} from 'vue';
 import  NavBar  from "./components/NavBar.vue";
-import FooterBar from './components/FooterBar.vue';
 import useUserLogin from './composables/useUserLogin';
 
 export default defineComponent({
   name: 'AppComponent',
   components: {
     NavBar,
-    FooterBar,
   },
   setup(){
     if (localStorage.getItem('token')){

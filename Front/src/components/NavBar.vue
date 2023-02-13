@@ -1,10 +1,10 @@
 <template>
   <div v-if="isAuthenticated">
-    <nav class="navbar justify-content-space-between navbar-dark" style="background-color: var(--color-violet500)">
+    <nav class="navbar justify-content-space-between navbar-dark fixed-top" style="background-color: var(--color-violet500)">
       <div class="search-container">
-        <div class="navbar-brand">
-          <img class="d-inline-block align-top logo" src="../assets/logo-eye.png" alt="DySocial logo"/>
-        </div>      
+        <a  href="https://github.com/Debugirls" class="navbar-brand">
+          <img class="d-inline-block align-top logo" src="../assets/logoLight.png" alt="DySocial logo"/>
+        </a>        
         <FilterBar/>  
       </div>
       <div class="group-buttons">
@@ -37,11 +37,11 @@
     </nav>
   </div>
   <div v-else>
-    <nav class="navbar justify-content-space-between navbar-dark" style="background-color: var(--color-violet500)">
+    <nav class="navbar justify-content-space-between navbar-dark fixed-top" style="background-color: var(--color-violet500)">
       <div class="search-container">
-        <div class="navbar-brand">
-          <img class="d-inline-block align-top logo" src="../assets/logo-eye.png" alt="DySocial logo"/>
-        </div>      
+        <a  href="https://github.com/Debugirls" class="navbar-brand">
+          <img class="d-inline-block align-top logo" src="../assets/logoLight.png" alt="DySocial logo"/>
+        </a>      
       </div>
       <div class="group-buttons">
         <!--Home-->
@@ -95,12 +95,8 @@ export default defineComponent({
 </script>
 <style scoped>
 .container-navbar{
-  --bs-gutter-x: 1.0rem;
-  --bs-gutter-y: 0;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
-  margin-right: auto;
-  margin-left: 0;
+ position: fixed;
+ position: top;
 }
 .search-container{
   display: flex;
@@ -118,11 +114,11 @@ export default defineComponent({
   font-weight: 900;
 }
 .logo{
-  max-height: 3rem;
+  max-width: 10rem;
   align-self: center;
   margin-top: 7%;
-  margin-left: 25%;
-  margin-left: 25%;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 .userNav{
   max-height: 5rem;
