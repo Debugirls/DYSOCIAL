@@ -30,7 +30,7 @@ export default defineComponent({
     const { publications, publicationsFiltered, fetchPublications, publicationsLength, fetchPublicationByTitle, fetchPublicationByPagination, totalPages } = usePublications();
     fetchPublications();
     let inputFilter = ref("");
-    const limitShow = 4;
+    const limitShow = 8;
     const showAllPublications = () => {
       fetchPublicationByPagination({offset: 0, limit: limitShow});
       }
