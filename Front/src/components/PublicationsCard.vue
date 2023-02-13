@@ -30,7 +30,9 @@
       <router-link class="link" to="/login">Lógate</router-link> para poder seguir a este usuario y darle Karma
     </li>
   </ul>
-  <img class="public-img"  :src= "`http://localhost:8081/images/${publication.id}${publication.image}`" alt="Imagen de la publicación" />
+  <div class="img-cont">
+    <img class="public-img"  :src= "`http://localhost:8081/images/${publication.id}${publication.image}`" alt="Imagen de la publicación" />
+  </div>
   <div class="card-body">
     <h5 class="card-title">{{ publication.title }}</h5>
     <p class="card-text">{{ publication.text }}</p>
@@ -66,6 +68,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.img-cont{
+  align-content: center;
+}
   .publication {
     margin: 2%;
   }
@@ -73,16 +78,18 @@ export default defineComponent({
     background-color: var(--color-violet10) !important;
     border-color: var(--color-violet400);
     border-style: 1px dotted;
+    display: flex;
+    
   }
   .list-group-item{
     background-color: var(--color-violet10color) !important;
   }
   .public-img {
-    width: auto;
+    width: fit-content;
+    max-width: 16rem;
     padding: 5px; 
     max-height: 10rem;
-    border-start-start-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
   }
   .public-author{
     color: var(--color-violet700);
