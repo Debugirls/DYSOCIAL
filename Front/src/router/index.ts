@@ -19,12 +19,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/ProfileView.vue')
   },
   {
-    path: '/homeuser',
-    name: 'homeUser',
-    beforeEnter: [haveRoleGuard],
-    component: () => import('../views/HomeUserView.vue')
-  },
-  {
     path: '/newpublication',
     name: 'newPublication',
     beforeEnter: [haveRoleGuard],

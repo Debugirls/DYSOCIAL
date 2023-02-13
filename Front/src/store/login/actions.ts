@@ -16,7 +16,7 @@ const actions: ActionTree<ILoginState, IState> = {
             commit("setToken", data);
              //Usamos la mutación setToken para modificar el state del token que recibimos y lo guardamos. 
             localStorage.setItem('token', data.accessToken);
-            router.push({name: 'homeUser'});
+            router.push({name: 'home'});
     }   catch(error: any){
             console.error(error.message)
             alert('Status 401: No tienes permisos de acceso')

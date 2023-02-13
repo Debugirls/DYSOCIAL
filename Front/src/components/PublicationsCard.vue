@@ -11,7 +11,7 @@
   </div>
   <ul class="list-group list-group-flush" v-if="isAuth">
     <li class="list-group-item">
-      <button class="follow-button btn-style" @click.once="$emit('dislike', publication)">
+      <button class="follow-button btn-style" @click="$emit('dislike', publication)">
         <img height="15" width="15" src="../assets/karmaNegative.png"/>
       </button>
       <button class="follow-button btn-style" style="margin-left: 2%; margin-right: 2%;" @click="$emit('follow', publication.author)">
@@ -20,7 +20,7 @@
           <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
         </svg>
       </button>
-      <button class="follow-button btn-style" @click.once="$emit('like', publication)">
+      <button class="follow-button btn-style" @click="$emit('like', publication)">
         <img height="15" width="15" src="../assets/karmaPositive.png"/>
       </button>
     </li>
@@ -51,6 +51,7 @@ import { Publication } from "../models/publications";
 
 export default defineComponent({
   name: 'PublicationsCard',
+
   props: {
     publication: {
       type: Object as PropType<Publication>,

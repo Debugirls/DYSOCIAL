@@ -55,7 +55,7 @@ export default defineComponent({
 
     submit(){
       this.createNew()
-      this.$router.push({ name: "homeUser"});
+      this.$router.push({ name: "home"});
     },
 
     async createNew() {

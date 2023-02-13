@@ -16,7 +16,7 @@
         </svg>
       </RouterLink>
       </div>
-      <div v-else="searchinByAuthor">
+      <div v-else>
       <RouterLink to="#" class="btn btn-outline-dark" active-class="active" @click="searchinByAuthor = false" type="button">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
           <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
@@ -36,7 +36,7 @@
         <input v-model="titleQuery" type="search" class="form-control rounded" placeholder="Buscar por titulo" aria-label="Search" />
       </form>
     </div>
-    <div v-else="searchinByAuthor">
+    <div v-else>
       <form class="form-group" @submit.prevent="filterByAuthor">
         <input v-model="authorQuery" type="search"  class="form-control rounded" placeholder="Buscar por usuario" aria-label="Search" />
       </form>
@@ -72,13 +72,13 @@ export default defineComponent({
     methods: {
       async filterByTitle() {
         if (this.titleQuery.length > 0 ) {
-          this.$router.push({ name: "homeUser",  query: { titleQuery: this.titleQuery }})
+          this.$router.push({ name: "home",  query: { titleQuery: this.titleQuery }})
         }    
       },
 
       async filterByAuthor() {
         if (this.authorQuery.length > 0 ) {
-          this.$router.push({ name: "homeUser",  query: { authorQuery: this.authorQuery }})
+          this.$router.push({ name: "home",  query: { authorQuery: this.authorQuery }})
         }    
       }
     }
