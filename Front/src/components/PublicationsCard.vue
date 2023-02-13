@@ -75,9 +75,9 @@ export default defineComponent({
     margin: 2%;
   }
   .card {
-    background-color: var(--color-violet10) !important;
-    border-color: var(--color-violet400);
-    border-style: 1px dotted;
+    background-color: #f8fafc !important;
+    border-color: #d1d5db;
+    border-style: 2px dotted;
     display: flex;
     
   }
@@ -92,11 +92,11 @@ export default defineComponent({
     border-radius: 10px;
   }
   .public-author{
+    font-family: 'Source Serif Pro', serif;
     color: var(--color-violet700);
     font-weight: 700;
     margin-left: 2%;
     margin-right: 5%;
-    text-shadow: var(--color-green100) 1px 0 2px;
   }
   .public-date{
     color: var(--color-violet400);
@@ -113,11 +113,12 @@ export default defineComponent({
     padding-left: 1%;
   } 
   .card-title{
+    font-family: 'Playfair Display', serif;
     color: var(--color-violet700);
     font-weight: 700;
-    text-shadow: var(--color-green100) 1px 0 2px;
   }
   .public-text {
+    font-family: 'Assistant', sans-serif;
     text-align: justify;
     padding: 5%;
     color: var(--color-violet600)
@@ -160,6 +161,9 @@ export default defineComponent({
     font-size: 13px;
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@1&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Raleway:ital@1&display=swap');
 
+  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap');
  </style>
     
