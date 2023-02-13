@@ -9,6 +9,7 @@
     </div>
     <NavigationButtons @previous="showPrevious" @next="showNext"/>
   </div>
+  
 </template>
 
 <script lang="ts">
@@ -16,13 +17,13 @@ import { defineComponent, ref } from 'vue';
 import PublicationsCard from '../components/PublicationsCard.vue';
 //import { Publication } from '../models/publications';
 import usePublications from '../composables/usePublications';
-import NavigationButtons from '../components/NavigationButtons.vue'
+import NavigationButtons from '../components/NavigationButtons.vue';
 
 export default defineComponent({
   name: 'HomeView',
   components: {
     PublicationsCard,
-    NavigationButtons
+    NavigationButtons,
   },
   
   setup() {
