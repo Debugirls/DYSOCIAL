@@ -104,17 +104,17 @@ body {
 }
 
 h3 {
+  font-family: 'Source Code Pro';
   color: var(--color-violet700);
   margin-top: 2%;
   font-size: 2.5rem;
   font-weight: bold;
-  text-shadow: var(--color-green100) 1px 0 2px;
 }
 
 .form {
   display: flexbox;
   align-items: initial;
-  background-color: var(--color-violet100);
+  background-color: #c7d2fe;
   margin: 2% 20% 2% 20%;
   padding: 2%;
   border: 1px var(--color-violet900);
@@ -123,12 +123,12 @@ h3 {
 }
 
 .form-label {
+  font-family: 'Gentium Book Plus', serif;
   margin-top: 1%;
   padding: 10px;
   width: 100%;
   font-size: 1.3rem;
   color: var(--color-violet700);
-  text-shadow: var(--color-violet300) 1px 0 2px;
 }
 
 .form-input {

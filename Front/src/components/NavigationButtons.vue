@@ -26,11 +26,12 @@ a{
 }
 
 .page-next, .page-next:after, .page-prev, .page-prev:after {
+  font-family: ReithSans, Helvetica, Arial, sans-serif;
   width: 150px;
   height: 76px;
   line-height: 78px;
   font-size: 20px;
-  background-color: var(--color-green100);
+  background-color: #5eead4;
   border: 0;
   color: var(--color-violet700);
   letter-spacing: 3px;
