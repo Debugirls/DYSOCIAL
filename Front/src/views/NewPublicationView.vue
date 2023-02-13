@@ -104,7 +104,6 @@ body {
 }
 
 h3 {
-  font-family: 'Source Code Pro';
   color: var(--color-violet700);
   margin-top: 2%;
   font-size: 2.5rem;
