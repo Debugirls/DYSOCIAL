@@ -1,5 +1,5 @@
 <template>
-  <div class="card card w-25 mt-2 publication">
+  <div class="card card w-50 p-3 mt-2 publication">
 
   <div class="card-header">
     <span class="public-author">
@@ -74,6 +74,14 @@ export default defineComponent({
   .publication {
     margin: 2%;
   }
+  .w-50{
+    width: 100% !important;
+  }
+  @media (min-width: 800px) {
+    .w-50{
+      width: 45% !important;
+    }
+  }
   .card {
     background-color: #f8fafc !important;
     border-color: #d1d5db;
@@ -92,9 +100,9 @@ export default defineComponent({
     border-radius: 10px;
   }
   .public-author{
-    font-family: 'Source Serif Pro', serif;
     color: var(--color-violet700);
-    font-weight: 700;
+    font-weight: 900;
+    font-style: italic;
     margin-left: 2%;
     margin-right: 5%;
   }
@@ -117,37 +125,10 @@ export default defineComponent({
     color: var(--color-violet700);
     font-weight: 700;
   }
-  .public-text {
-    font-family: 'Assistant', sans-serif;
-    text-align: justify;
-    padding: 5%;
-    color: var(--color-violet600)
-  }
-  .public-data {
-    color: var(--color-grey200);
-    padding-right: 2%;
-  }
-  .public-data, .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  .public-likes {
-    font-size: x-large;
-    margin-right: 10px;
-  }
-  .buttons {
-    padding: 0 1% 1% 0;
-  }
   .follow-button {
     border-radius: 5px;
     font-size: small;
 
-  }
-  button.like-button, button.dislike-button {
-    border-color: var(--color-violet100);
-    border-radius: 50%;
-    padding: 2px;   
-    margin-right: 6px; 
   }
   .link{
     color: var(--color-violet600);
@@ -157,13 +138,6 @@ export default defineComponent({
   .link:hover, link:active {
     color: var(--color-violet700)
   }
-  .msg {
-    font-size: 13px;
-  }
 
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@1&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Raleway:ital@1&display=swap');
-
-  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap');
  </style>
     
