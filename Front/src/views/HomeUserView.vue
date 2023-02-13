@@ -28,7 +28,7 @@ export default defineComponent({
   name: 'HomeUserView',
   components: {
     PublicationsCard,
-    NavigationButtons
+    NavigationButtons,
   },
   
   setup() {
@@ -82,7 +82,7 @@ export default defineComponent({
     async like() {
       const likeIt = (publication: Publication) => {
       publication.likes += 1};
-      
+    
       try{
         await dysocialApi.put<unknown, AxiosResponse<Publication[]>>('/publications/' + this.publications.id , likeIt ) 
         console.log("Update SUCCESS!")
