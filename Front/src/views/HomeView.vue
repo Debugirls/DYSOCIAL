@@ -1,5 +1,6 @@
 <template> 
   <div>
+    <NavigationButtons @previous="showPrevious" @next="showNext"/>
     <div class="publication-list">
       <PublicationsCard v-for="publication in publicationsFiltered"
       :key="publication.id"
