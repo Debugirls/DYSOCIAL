@@ -24,36 +24,17 @@ a{
   padding: 12px;
   text-decoration: none;
 }
-.page-prev {
-  background: linear-gradient(
-      90deg,
-      var(--color-violet500),
-      var(--color-violet400),
-      var(--color-violet300),
-      var(--color-violet200),
-      var(--color-green100));
-}
-.page-next {
-  background: linear-gradient(
-      270deg,
-      var(--color-violet500),
-      var(--color-violet400),
-      var(--color-violet300),
-      var(--color-violet200),
-      var(--color-green100));
-}
 
-.button, .button:after {
+.page-next, .page-next:after, .page-prev, .page-prev:after {
   width: 150px;
   height: 76px;
   line-height: 78px;
   font-size: 20px;
-  font-family: 'Bebas Neue', sans-serif;
   background-color: var(--color-green100);
   border: 0;
   color: var(--color-violet700);
   letter-spacing: 3px;
-  box-shadow: 6px 0px 0px var(--color-violet500);
+  box-shadow: 0px 0px 6px 0px  var(--color-violet500);
   outline: transparent;
   position: relative;
   user-select: none;
@@ -61,15 +42,14 @@ a{
   touch-action: manipulation;
 }
 
-.button:after {
+.page-next:after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
   --slice-2: inset(50% -6px 30% 0);
   --slice-3: inset(10% -6px 85% 0);
   --slice-4: inset(40% -6px 43% 0);
   --slice-5: inset(80% -6px 5% 0);
-  
-  content: 'ALWAYS WATCHING';
+  content: 'WATCHING';
   display: block;
   position: absolute;
   top: 0;
@@ -81,10 +61,30 @@ a{
   clip-path: var(--slice-0);
 }
 
-.button:hover:after {
+.page-next:hover:after, .page-prev:hover:after {
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
+
+.page-prev:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: 'ALWAYS';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, var(--color-violet500) 5%, var(--color-green100) 5%, var(--color-violet500) 3%,  transparent 3%, );
+  text-shadow: -3px -3px 0px var(--color-grey200), 3px 3px 0px var(--color-green100);
+  clip-path: var(--slice-0);
+}
+
 
 @keyframes glitch {
   0% {
@@ -133,12 +133,4 @@ a{
   }
 }
 
-@media (min-width: 768px) {
-  .button,
-  .button:after {
-    width: 200px;
-    height: 86px;
-    line-height: 88px;
-  }
-}
 </style>
