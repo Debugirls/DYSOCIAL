@@ -6,7 +6,6 @@
     <FooterBar class="footer"/>
     </div>
   </div>
-  
 </template>
 
 <script lang="ts">
@@ -49,6 +48,7 @@ nav a.router-link-exact-active {
   text-decoration: none;
   color: var(--color-green100)
 }
+
 .footer {
     width: 100%;
     height: 81px;

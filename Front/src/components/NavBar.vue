@@ -57,13 +57,13 @@
       </div>
     </nav>
   </div>
-  
   </template>
   
 <script lang="ts">
 import useUserLogin from "../composables/useUserLogin";
 import { defineComponent} from 'vue';
 import FilterBar from "./FilterBar.vue";
+
 export default defineComponent({
   name: "NavBar",
   data(){
@@ -76,42 +76,24 @@ export default defineComponent({
       this.isAuthenticated = localStorage.token !== undefined && localStorage.token !== null
     }
   },
-
   components: {
     FilterBar
   },
   setup() {
-    //Desestructuramos el composable useAuthLogin, quedándonos con el método deleteToken que ejecutaremos cuando hagamos click sobre el enlace del logout
     const { deleteToken, userLogin } = useUserLogin();
     const logout = () => {
         deleteToken();
-    }
-        
-    return {
-      logout
-    };
+    }   
+    return { logout };
   },
 })
 </script>
+
 <style scoped>
-.container-navbar{
- position: fixed;
- position: top;
-}
 .search-container{
   display: flex;
   flex-direction: row;
   align-self: center;
-}
-.searchbar{
-  align-self: center;
-  max-width: 90%;
-  margin-top: 3%;
-  margin-right: 0.20rem;
-  margin-right: 0.20rem;
-}
-.login-text{
-  font-weight: 900;
 }
 .logo{
   max-width: 10rem;
@@ -119,10 +101,6 @@ export default defineComponent({
   margin-top: 7%;
   margin-left: 5%;
   margin-right: 2%;
-}
-.userNav{
-  max-height: 5rem;
-  background-color: var(--color-violet200)
 }
 .group-buttons{
   margin-right: 0.3%;

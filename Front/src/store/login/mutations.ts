@@ -4,7 +4,6 @@ import { MutationTree } from 'vuex';
 import { ILoginState } from './state';
 
 const mutations: MutationTree<ILoginState> = {
-    //Mutaciones para volcar datos y guardarlos:
     //Mutación para añadir el token recibido al state
     setToken(state: ILoginState, token: Token) {
         state.token = token;
@@ -21,6 +20,6 @@ const mutations: MutationTree<ILoginState> = {
     deleteToken(state: ILoginState) {
         state.token = null;
     },
-    }
+}
 
 export default mutations;

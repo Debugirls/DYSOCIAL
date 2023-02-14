@@ -17,8 +17,6 @@ function upploadFile(){
       const upload = multer({ storage: storage }).single('image')
       
       return upload;
-      
-
 }
 
 module.exports = upploadFile;

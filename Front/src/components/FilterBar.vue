@@ -1,5 +1,4 @@
 <template>
-  <!--TODO: Add each filtter logic"-->
   <div class="input-group mb-3" style="margin-top: 1rem; margin-left: 0.5rem">
     <div class="input-group-prepend">
       <div v-if="!searchinByAuthor">
@@ -47,10 +46,8 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 
-
 export default defineComponent({
   setup(_, ctx) {
-
     const title = ref<string>("");
     const author = ref<string>("");
     
@@ -61,7 +58,6 @@ export default defineComponent({
   },
 
   name: "FilterBar",
-
   data() {
     return { 
       searchinByAuthor: false,
@@ -69,24 +65,22 @@ export default defineComponent({
       authorQuery: "",
     }},
 
-    methods: {
-      async filterByTitle() {
-        if (this.titleQuery.length > 0 ) {
-          this.$router.push({ name: "home",  query: { titleQuery: this.titleQuery }})
-        }    
-      },
-
-      async filterByAuthor() {
-        if (this.authorQuery.length > 0 ) {
-          this.$router.push({ name: "home",  query: { authorQuery: this.authorQuery }})
-        }    
-      }
+  methods: {
+    async filterByTitle() {
+      if (this.titleQuery.length > 0 ) {
+        this.$router.push({ name: "home",  query: { titleQuery: this.titleQuery }})
+      }    
+    },
+    async filterByAuthor() {
+      if (this.authorQuery.length > 0 ) {
+        this.$router.push({ name: "home",  query: { authorQuery: this.authorQuery }})
+      }    
     }
+  }
 })
 </script>
 
 <style scoped>
-
 .form-control:focus {
   border-color: #6af0c6;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(106, 240, 198, 0.6);
@@ -110,6 +104,4 @@ export default defineComponent({
   border-color: var(--color-green100) !important;
   background-color: var(--color-violet100) !important;
 }
-
-
 </style>

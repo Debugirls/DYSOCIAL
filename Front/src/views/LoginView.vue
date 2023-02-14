@@ -18,7 +18,6 @@
                     </div>
                     <div v-else class="card register">
                     <h1>CREAR USUARIO</h1>
-                    
                     <form class="form-group" @submit.prevent="signNewUser">
                         <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
                         <input v-model="usernameReg" type="text" class="form-control" placeholder="Nombre usuario" required>
@@ -35,7 +34,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -46,6 +44,7 @@ import { User } from '../models/user';
 import dysocialApi from '../api/dysocialApi';
 import { AxiosResponse } from 'axios';
 import useUserLogin from "../composables/useUserLogin";
+
 export default defineComponent({
   name: "NavBar",
   components: {
@@ -62,16 +61,14 @@ export default defineComponent({
       showSignupSuccesfullMessage: false
     }},
   setup() {
-    //Haremos la llamada a la Api con el fetchToken traido del composable al que le pasaremos los valores de email y contraseña con el evento submit del formulario
     const { fetchToken, fetchUserLogin } = useUserLogin();
-    //Variables ractivas que se accede mediante .value
     let email = ref("");
     let password = ref("");
     const getToken = async () => {
       await fetchToken({email: email.value.toLowerCase(), password: password.value});
       if (localStorage.getItem('token')){
         fetchUserLogin()
-    }
+      }
     }
     return{
       email,
@@ -85,7 +82,6 @@ export default defineComponent({
       json.append('email', this.emailReg.toLowerCase()); 
       json.append('password', this.passwordReg);  
       json.append('username', this.usernameReg);
-      console.log('Mensaje', {json});
       try {
           await dysocialApi.post<unknown, AxiosResponse<User[]>>('/auth/signup', json);  
           this.showSignupSuccesfullMessage = true
@@ -97,8 +93,8 @@ export default defineComponent({
     } }
    },
 })
-
 </script>
+
 <style scoped>
 .userCreated{
   padding-top: 1rem;
@@ -118,7 +114,6 @@ h1 {
     font-weight: 600;
     text-shadow: var(--color-green100) 1px 0 2px;
 }
-
 .card {
    padding: 1rem;
    margin-top: 1rem;
@@ -126,17 +121,14 @@ h1 {
    background-color: var(--color-violet200);
    box-shadow: var(--color-green100) 1px 2px;
 }
-
 .form-group input{
     margin-bottom: 1.25rem;
 }
-
 .login-page {
    align-items: center;
    display: flex;
    flex-direction: column;
 }
-
 .link{
     color: var(--color-violet600);
     font-weight: 800;
@@ -145,12 +137,10 @@ h1 {
 .link:hover, link:active {
   color: var(--color-violet700)
 }
-
 .logo{
     max-width: 20rem;
     margin-top: 3rem;
 }
-
 .btn-outline-primary{
   color: var(--color-green100) !important;
   border-color: var(--color-violet700) !important;
@@ -158,7 +148,6 @@ h1 {
   margin: 0rem 0.5rem;
   font-weight: 600;
 }
-
 .btn-outline-primary:hover, .btn-outline-primary:active {
   color: var(--color-violet500) !important;
   border-color: var(--color-violet500) !important;

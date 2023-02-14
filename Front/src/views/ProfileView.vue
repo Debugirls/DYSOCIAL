@@ -35,7 +35,6 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { User } from '../models/user';
 import useUserLogin from '../composables/useUserLogin';
 
 export default defineComponent({
@@ -55,35 +54,25 @@ export default defineComponent({
     }
   }
 })
-
-
-
 </script>
 
 <style scoped>
-
 .card{
   border-radius: .5rem;
   border: var(--color-greenviolet100);
   background-color: var(--color-violet700);
   box-shadow: var(--color-green100) 1px 2px;
 }
-
 .text-muted{
-    color: var(--color-violet100) !important;
+  color: var(--color-violet100) !important;
 }
-
 h6, h5{
-    color: var(--color-green100);
+  color: var(--color-green100);
 }
 .gradient-custom {
-/* fallback for old browsers */
-background: var(--color-violet600);
-
-/* Chrome 10-2 */
-background: -webkit-linear-gradient(to right bottom, var(--color-violet200), var(--color-violet600));
-
-/* IE 10+/ Edge, Firefox 16+, Chrome 26+ */
-background: linear-gradient(to right bottom, var(--color-violet200), var(--color-violet600));
+  background: var(--color-violet600);
+  background: -webkit-linear-gradient(to right bottom, var(--color-violet200), var(--color-violet600));
+  background: linear-gradient(to right bottom, var(--color-violet200), var(--color-violet600));
 }
+
 </style>
