@@ -3,7 +3,7 @@
     <nav class="navbar justify-content-space-between navbar-dark fixed-top" style="background-color: var(--color-violet500)">
       <div class="search-container">
         <a  href="https://github.com/Debugirls" class="navbar-brand">
-          <img class="d-inline-block align-top logo" src="../assets/logoLight.png" alt="DySocial logo"/>
+          <img class="d-inline-block align-top logo-sm" src="../assets/logo-eye.png" alt="DySocial logo"/>
         </a>        
         <FilterBar/>  
       </div>
@@ -100,6 +100,13 @@ export default defineComponent({
   align-self: center;
   margin-top: 7%;
   margin-left: 5%;
+  margin-right: 2%;
+}
+.logo-sm {
+  max-height: 3rem;
+  align-self: center;
+  margin-top: 7%;
+  margin-left: 15%;
   margin-right: 2%;
 }
 .group-buttons{
