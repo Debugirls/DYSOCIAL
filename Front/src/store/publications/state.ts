@@ -19,4 +19,5 @@ function state(): IPublicationsState {
     currentPage:  0
   };
 }
+
 export default state;

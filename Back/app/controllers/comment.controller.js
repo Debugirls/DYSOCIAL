@@ -4,7 +4,6 @@ const Comment = db.comments;
 const getPagination = (page, size) => {
     const limit = size ? +size : 5;
     const offset = page ? page * limit : 0;
-
     return { limit, offset };
 };
 
@@ -16,7 +15,7 @@ exports.create = (req, res) => {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
-console.log(req.body)
+
     // Create a Comment
     const comment = new Comment({
         image: req.body.image,
@@ -42,13 +41,6 @@ console.log(req.body)
 };
 
 // Retrieve all comments from the database and find by title from the database:
-
-
-//Aqui hago uso de GetSortedAndPaged,introduciendo el offset, limit y maxDate que vienen de la query url
-//(la llamada http con las interrogaciones y los parametros extra)
-//blablabla/publications?page=0&size=24&maxDate=20230101
-//maxDate determina la fecha de post mas tardÍos que vamos a devolver:
-
 exports.findAll = (req, res) => {
     const title = req.query.title;
     const author = req.query.author;
@@ -125,7 +117,6 @@ exports.update = (req, res) => {
 };
 
 // Delete a comment with the specified id in the request
-
 exports.delete = (req, res) => {
     const id = req.params.id;
 

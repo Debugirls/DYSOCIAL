@@ -8,7 +8,6 @@ const dysocialApi = axios.create({
 dysocialApi.interceptors.request.use((config)=>{
   (config.headers as AxiosHeaders).set("Accept", "application/json"); 
   !config.headers["Content-Type"] && (config.headers as AxiosHeaders).set("Content-Type", "application/json"); 
-
     const token = localStorage.getItem('token');
     if(token) {
       (config.headers as AxiosHeaders).set("x-access-token", token); // JWT

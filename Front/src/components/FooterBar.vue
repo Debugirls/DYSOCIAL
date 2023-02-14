@@ -1,7 +1,6 @@
 <template>
     <footer class="footer-distributed">
         <div class="footer-right">
-
             <a href="https://github.com/Debugirls" target="_blank">
                 <button type="button"  class="btn btn-outline-light">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">

@@ -24,7 +24,6 @@ a{
   padding: 12px;
   text-decoration: none;
 }
-
 .page-next, .page-next:after, .page-prev, .page-prev:after {
   font-family: ReithSans, Helvetica, Arial, sans-serif;
   width: 150px;
@@ -42,7 +41,6 @@ a{
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
 .page-next:after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
@@ -61,12 +59,10 @@ a{
   text-shadow: -3px -3px 0px var(--color-grey200), 3px 3px 0px var(--color-green100);
   clip-path: var(--slice-0);
 }
-
 .page-next:hover:after, .page-prev:hover:after {
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
-
 .page-prev:after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
@@ -85,7 +81,6 @@ a{
   text-shadow: -3px -3px 0px var(--color-grey200), 3px 3px 0px var(--color-green100);
   clip-path: var(--slice-0);
 }
-
 
 @keyframes glitch {
   0% {
@@ -133,5 +128,4 @@ a{
     transform: translate(0);
   }
 }
-
 </style>

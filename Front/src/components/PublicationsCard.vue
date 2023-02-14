@@ -1,6 +1,5 @@
 <template>
   <div class="card card w-50 p-3 mt-2 publication">
-
   <div class="card-header">
     <span class="public-author">
       {{ publication.author }}
@@ -45,13 +44,11 @@
 </template>
 
 <script lang="ts">
-//import publicationsModule from '@/store/publications';
 import { defineComponent, PropType } from 'vue';
 import { Publication } from "../models/publications";
 
 export default defineComponent({
   name: 'PublicationsCard',
-
   props: {
     publication: {
       type: Object as PropType<Publication>,
@@ -69,9 +66,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.img-cont{
-  align-content: center;
-}
+  .img-cont{
+    align-content: center;
+  }
   .publication {
     margin: 2%;
   }
@@ -87,8 +84,7 @@ export default defineComponent({
     background-color: #f8fafc !important;
     border-color: #d1d5db;
     border-style: 2px dotted;
-    display: flex;
-    
+    display: flex;  
   }
   .list-group-item{
     background-color: var(--color-violet10color) !important;
@@ -114,13 +110,6 @@ export default defineComponent({
     margin-right: 2%;
     font-style: italic;
   }
-  .public-info {
-    display: flexbox;
-    padding-top: 2%;  
-    font-size: 20px;
-    line-height: 84%;
-    padding-left: 1%;
-  } 
   .card-title{
     font-family: 'Playfair Display', serif;
     color: var(--color-violet700);
@@ -129,7 +118,6 @@ export default defineComponent({
   .follow-button {
     border-radius: 5px;
     font-size: small;
-
   }
   .link{
     color: var(--color-violet600);
@@ -139,6 +127,5 @@ export default defineComponent({
   .link:hover, link:active {
     color: var(--color-violet700)
   }
-
  </style>
     

@@ -8,7 +8,7 @@ import router from "@/router";
 import { User } from "@/models/user";
 
 const actions: ActionTree<ILoginState, IState> = {
-    //Objetivo: hacer una petición de tipo post para que el usuario a través de unas credenciales, la API te devuelva el token o no
+    //Petición de tipo post para que la API te devuelva el token o no, según las credenciales del usuario
    async fetchToken({ commit }, body: Credentials){
     //Obtiene la data
         try {
@@ -22,15 +22,14 @@ const actions: ActionTree<ILoginState, IState> = {
             alert('Status 401: No tienes permisos de acceso')
     }
    },
-   //Objetivo: obtener información del perfil del usuario ya autorizado
+   //Obtener información del perfil del usuario ya autorizado
    async fetchUserLogin({commit}){
         commit('setIsLoading', true);
-        //TODO actualizar endpoint cuando esté listo por backend--> user/profile
         const {data} = await dysocialApi.get<unknown, AxiosResponse<User>>('/user/profile');
         commit('setIsLoading', false);
         commit('setUserLogin', data);
 },
-    //usamos la mutación para actualizar el estado eliminando el token del localStorage y redirigir al login
+    //Usamos la mutación para actualizar el estado eliminando el token del localStorage y redirigir al login
     deleteToken ({commit}){
         commit('deleteToken');
         localStorage.removeItem('token');

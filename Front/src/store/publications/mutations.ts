@@ -23,6 +23,7 @@ const mutations: MutationTree<IPublicationsState> = {
   setCurrentPage(state: IPublicationsState, currentPage: number) {
     state.currentPage = currentPage;
   },
+
   setTotalItems(state: IPublicationsState, totalItems: number) {
     state.totalItems = totalItems;
   },

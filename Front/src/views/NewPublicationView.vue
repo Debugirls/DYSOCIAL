@@ -49,7 +49,6 @@ export default defineComponent({
 
   methods: {
     insertImage(event: any) {
-      console.log(event.target.files);
       this.image = event.target.files[0]
     },
 
@@ -75,7 +74,6 @@ export default defineComponent({
         } else {
           const newComment = await dysocialApi.post<unknown, AxiosResponse<Publication>>(
             '/publications', json);
-
           const fileData = new FormData();
           fileData.append('image', this.image);
           await dysocialApi.post<unknown, AxiosResponse<Publication[]>>(
@@ -102,14 +100,12 @@ body {
   color: var(--color-black100);
   font-size: 16px;
 }
-
 h3 {
   color: var(--color-violet700);
   margin-top: 2%;
   font-size: 2.5rem;
   font-weight: bold;
 }
-
 .form {
   display: flexbox;
   align-items: initial;
@@ -120,7 +116,6 @@ h3 {
   border-radius: 20px;
   flex-wrap: wrap;
 }
-
 .form-label {
   font-family: 'Gentium Book Plus', serif;
   margin-top: 1%;
@@ -129,13 +124,9 @@ h3 {
   font-size: 1.3rem;
   color: var(--color-violet700);
 }
-
 .form-input {
   color: var(--color-violet700);
   border-radius: 16px;
   width: 70%;
 }
-
 </style>
-
-

@@ -11,8 +11,7 @@
       />
     </div>
     <NavigationButtons @previous="showPrevious" @next="showNext"/>
-  </div>
-  
+  </div> 
 </template>
 
 <script lang="ts">
@@ -46,8 +45,9 @@ export default defineComponent({
       fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
       }
     fetchPublicationByPagination({offset: 0, limit: limitShow, title: titleQuery, author: authorQuery});
+
     //Evento que se lanza al hacer click en 'See previous' para mostrar los anteriores productos. 
-  let offset = 0;
+    let offset = 0;
     const showPrevious = () =>{
       if (offset == 0){
         alert('Otra cosa')
@@ -79,7 +79,7 @@ export default defineComponent({
       }
     }
 
-    //Evento que se lanza al hacer click en 'disLike' para añadir karma
+    //Evento que se lanza al hacer click en 'disLike' para quitar karma
     async function dislike(publication: Publication) {
       publication.likes -= 1;
       try{
@@ -94,7 +94,7 @@ export default defineComponent({
     return { 
       like,
       dislike,
-      follow: (publication: Publication) => publication ,//TODO:botón de seguir
+      follow: (publication: Publication) => publication ,
       publications, 
       publicationsFiltered, 
       inputFilter,
@@ -105,6 +105,7 @@ export default defineComponent({
   }
 });
 </script>
+
 <style scoped>
 .publication-list{
   display: flex;
